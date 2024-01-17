@@ -97,3 +97,32 @@ textarea:not([rows]) {
 /* ------------------- */
 /* STYLING BEGINS      */
 /* ------------------- */
+
+/* General styles */
+body {
+    font-family: var(--ff-regular), Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Utility classes */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Main section */
+main {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
