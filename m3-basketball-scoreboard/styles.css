@@ -1,7 +1,21 @@
+@font-face {
+    font-family: 'Cursed Timer ULiL';
+    src: url(fonts/CursedTimerUlil-Aznm.ttf);
+}
+
 /* ------------------- */
 /* Custom Properties   */
 /* ------------------- */
-:root
+:root {
+    --clr-body-bg: #1B244A;
+    --clr-title: #ffffff;
+    --clr-score-num: #F94F6D;
+    --clr-score-bg: #080001;
+    --clr-score-btn: #9AABD8;
+
+    --ff-regular: '';
+    --ff-digital: 'Cursed Timer ULiL';
+}
 
 /* ------------------- */
 /* CSS Reset           */
