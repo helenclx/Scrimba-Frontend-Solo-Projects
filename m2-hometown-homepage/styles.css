@@ -1,0 +1,180 @@
+/* ------------------- */
+/* Custom Properties   */
+/* ------------------- */
+:root {
+    --clr-text: #260F26;
+    --clr-accent-1: #457B9D;
+    --clr-accent-2: #1D3557;
+    --clr-accent-3: #F1FAEE;
+    --clr-card-bg: #A8DADC;
+}
+
+/* ------------------- */
+/* CSS Reset           */
+/* ------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* ------------------- */
+/* STYLING BEGINS      */
+/* ------------------- */
+
+/* General styling */
+body {
+    text-align: center;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    margin-bottom: 2rem;
+}
+
+img {
+    width: 6.25rem; /*100px */
+}
+
+/* Hero section */
+.hero {
+    height: 25rem;
+    background-image: url(images/torshov.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero__title {
+    font-weight: bold;
+    background: var(--clr-accent-1);
+    color: var(--clr-accent-3);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.hero__subtitle {
+    font-weight: bold;
+    background: var(--clr-accent-2);
+    color: var(--clr-accent-3);
+    padding: 0.7rem 1rem;
+    border-radius: 1rem;
+    max-width: 90%;
+}
+
+/* Activities section */
+.activities {
+    background: var(--clr-accent-3);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.activities__title {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-size: 1.4em;
+}
+
+.activities__list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.activities__list img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.activities__list h4 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Guide section */
+.guide {
+    background: var(--clr-card-bg);
+    width: 20rem;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 0.5rem solid var(--clr-accent-1);
+    border-radius: 0.8rem;
+}
+
+.guide__info {
+    padding: 0 0.5rem;
+}
+
+.guide__info p {
+    margin: 1rem 0;
+}
