@@ -178,3 +178,15 @@ img {
 .guide__info p {
     margin: 1rem 0;
 }
+
+/* Attribution */
+.attribution {
+    font-size: 0.6875rem; /* 11px */
+    text-align: center;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
