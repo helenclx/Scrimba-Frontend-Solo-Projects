@@ -127,6 +127,22 @@ main {
     justify-content: space-around;
 }
 
+/* Team sections */
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team__score {
+    font-family: var(--ff-digital), Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+}
+
+.team__score-btn {
+    font-family: var(--ff-digital), Arial, Helvetica, sans-serif;
+}
+
 /* Attribution */
 .attribution {
     font-size: 0.6875rem; /* 11px */
