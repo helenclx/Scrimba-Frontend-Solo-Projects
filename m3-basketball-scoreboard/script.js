@@ -8,17 +8,15 @@ let homeScore = 0;
 let guestScore = 0;
 
 homeAddScoreBtns.forEach((btn, i) => {
-    const scoreAdded = i + 1;
     btn.addEventListener('click', () => {
-        homeScore += scoreAdded;
+        homeScore += i + 1;
         homeScoreEl.textContent = homeScore;
     });
 });
 
 guestAddScoreBtns.forEach((btn, i) => {
-    const scoreAdded = i + 1;
     btn.addEventListener('click', () => {
-        guestScore += scoreAdded;
+        guestScore += i + 1;
         guestScoreEl.textContent = guestScore;
     });
 });
