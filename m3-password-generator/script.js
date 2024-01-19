@@ -5,7 +5,7 @@ let passwordLength = 15;
 const passwordBtn = document.querySelector(".password-btn");
 const passwordOneEl = document.querySelector("#password-1");
 const passwordTwoEl = document.querySelector("#password-2");
-const clipboardBtn = document.querySelectorAll(".clipboard");
+const clipboardBtns = document.querySelectorAll(".clipboard");
 
 passwordBtn.addEventListener("click", () => {
     passwordOneEl.textContent = getRandomPassword();
@@ -25,7 +25,7 @@ const getRandomCharacter = () => {
     return characters[randomChar];
 };
 
-clipboardBtn.forEach((btn, i) => {
+clipboardBtns.forEach((btn, i) => {
     const passwordEl = document.querySelector(`#password-${i + 1}`);
 
     btn.addEventListener("click", () => {
