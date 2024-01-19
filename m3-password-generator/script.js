@@ -20,8 +20,10 @@ const getRandomPassword = () => {
 };
 
 const getRandomCharacter = () => {
-    let randomChar = Math.floor(Math.random() * characters.length);
-    return characters[randomChar];
+    let characterStr = characters.join("");
+    const randomChar = Math.floor(Math.random() * characterStr.length);
+
+    return characterStr[randomChar];
 };
 
 clipboardBtns.forEach((btn, i) => {
