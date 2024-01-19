@@ -5,8 +5,10 @@ const passwordBtn = document.querySelector(".password-btn");
 const passwordOneEl = document.querySelector("#password-1");
 const passwordTwoEl = document.querySelector("#password-2");
 const clipboardBtns = document.querySelectorAll(".clipboard");
-const passwordSlider = document.querySelector(".setting__slider");
+const lengthSlider = document.querySelector(".setting__slider");
 const passwordLengthEl = document.querySelector("#password-length");
+const numberCheckbox = document.querySelector("#password-numbers");
+const symbolCheckbox = document.querySelector("#password-symbols");
 
 passwordBtn.addEventListener("click", () => {
     passwordOneEl.textContent = getRandomPassword();
@@ -37,7 +39,7 @@ clipboardBtns.forEach((btn, i) => {
     });
 });
 
-passwordSlider.addEventListener("input", () => {
-    passwordLength = passwordSlider.value;
+lengthSlider.addEventListener("input", () => {
+    passwordLength = lengthSlider.value;
     passwordLengthEl.textContent = passwordLength;
 });
