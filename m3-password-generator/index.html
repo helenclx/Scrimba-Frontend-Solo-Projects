@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="styles.css">
 
     <script src="script.js" defer></script>
@@ -19,8 +20,18 @@
         <p>Never use an insecure password again.</p>
         <button class="password-btn">Generate passwords</button>
         <section class="passwords">
-            <div class="password" id="password-1"></div>
-            <div class="password" id="password-2"></div>
+            <div class="password-wrapper">
+                <span class="password" id="password-1"></span>
+                <button class="clipboard" aria-label="Copy password to clipboard">
+                    <i class="fas fa-clipboard"></i>
+                </button>
+            </div>
+            <div class="password-wrapper">
+                <span class="password" id="password-2"></span>
+                <button class="clipboard" aria-label="Copy password to clipboard">
+                    <i class="fas fa-clipboard"></i>
+                </button>
+            </div>
         </section>
     </main>
     <footer class="attribution">
