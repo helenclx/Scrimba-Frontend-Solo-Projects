@@ -18,6 +18,10 @@
     <main>
         <h1>Generate a random password</h1>
         <p>Never use an insecure password again.</p>
+        <section class="settings">
+            <label for="password-length" class="setting__slider--label">Length: <span id="password-length">15</span></label>
+            <input type="range" min="4" max="32" value="15" class="setting__slider" name="password-length">
+        </section>
         <button class="password-btn">Generate passwords</button>
         <section class="passwords">
             <div class="password-wrapper">

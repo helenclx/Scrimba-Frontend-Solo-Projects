@@ -5,6 +5,8 @@ const passwordBtn = document.querySelector(".password-btn");
 const passwordOneEl = document.querySelector("#password-1");
 const passwordTwoEl = document.querySelector("#password-2");
 const clipboardBtns = document.querySelectorAll(".clipboard");
+const passwordSlider = document.querySelector(".setting__slider");
+const passwordLengthEl = document.querySelector("#password-length");
 
 passwordBtn.addEventListener("click", () => {
     passwordOneEl.textContent = getRandomPassword();
@@ -33,4 +35,9 @@ clipboardBtns.forEach((btn, i) => {
         navigator.clipboard.writeText(passwordEl.textContent);
         alert("Password copied to clipboard");
     });
+});
+
+passwordSlider.addEventListener("input", () => {
+    passwordLength = passwordSlider.value;
+    passwordLengthEl.textContent = passwordLength;
 });
