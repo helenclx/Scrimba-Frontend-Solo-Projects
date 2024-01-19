@@ -22,7 +22,7 @@ passwordBtn.addEventListener("click", () => {
 });
 
 const getRandomPassword = (length, characters) => {
-    let randomPassword= "";
+    let randomPassword = "";
     for (let i = 0; i < length; i++) {
         randomPassword += characters.charAt(
             Math.floor(Math.random() * characters.length)
