@@ -4,14 +4,20 @@ const symbols = "~`!@#$%^&*()_-+={[}],|:;<>.?/";
 
 let passwordLength = 15;
 
-const passwordBtn = document.querySelector(".password-btn");
-const passwordOneEl = document.querySelector("#password-1");
-const passwordTwoEl = document.querySelector("#password-2");
-const clipboardBtns = document.querySelectorAll(".clipboard");
 const lengthSlider = document.querySelector(".setting__slider");
 const passwordLengthEl = document.querySelector("#password-length");
 const numberCheckbox = document.querySelector("#password-numbers");
 const symbolCheckbox = document.querySelector("#password-symbols");
+const passwordBtn = document.querySelector(".password-btn");
+
+const passwordOneEl = document.querySelector("#password-1");
+const passwordTwoEl = document.querySelector("#password-2");
+const clipboardBtns = document.querySelectorAll(".clipboard");
+
+lengthSlider.addEventListener("input", () => {
+    passwordLength = lengthSlider.value;
+    passwordLengthEl.textContent = passwordLength;
+});
 
 passwordBtn.addEventListener("click", () => {
     let characters = alphabets;
@@ -38,9 +44,4 @@ clipboardBtns.forEach((btn, i) => {
         navigator.clipboard.writeText(passwordEl.textContent);
         alert("Password copied to clipboard");
     });
-});
-
-lengthSlider.addEventListener("input", () => {
-    passwordLength = lengthSlider.value;
-    passwordLengthEl.textContent = passwordLength;
 });
