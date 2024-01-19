@@ -1,7 +1,15 @@
 /* ------------------- */
 /* Custom Properties   */
 /* ------------------- */
-:root
+:root {
+    --clr-body-bg: #1C1C1C;
+    --clr-container-bg: #1F2937;
+    --clr-password-bg: #273549;
+    --clr-white: #ffffff;
+    --clr-accent: #8B5CF6;
+
+    --ff-body: 'Noto Sans';
+}
 
 /* ------------------- */
 /* CSS Reset           */
