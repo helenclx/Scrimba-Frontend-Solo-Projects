@@ -2,8 +2,24 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 "/"];
 let passwordLength = 15;
 
-const passwordBtn = document.querySelector('.password-btn');
+const passwordBtn = document.querySelector(".password-btn");
 const passwordOneEl = document.querySelector("#password-1");
 const passwordTwoEl = document.querySelector("#password-2");
 
-passwordBtn.addEventListener('click', );
+passwordBtn.addEventListener("click", () => {
+    passwordOneEl.textContent = getRandomPassword();
+    passwordTwoEl.textContent = getRandomPassword();
+});
+
+const getRandomPassword = () => {
+    let randomPassword= "";
+    for (let i = 0; i < passwordLength; i++) {
+        randomPassword += getRandomCharacter();
+    }
+    return randomPassword;
+};
+
+const getRandomCharacter = () => {
+    let randomChar = Math.floor(Math.random() * characters.length);
+    return characters[randomChar];
+};
