@@ -116,6 +116,7 @@ main {
 
 hr {
     border: 0.1rem solid var(--clr-password-bg);
+    margin: 2rem 0;
 }
 
 .password-btn {
