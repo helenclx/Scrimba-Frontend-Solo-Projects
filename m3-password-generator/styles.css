@@ -101,8 +101,17 @@ body {
     align-items: center;
 }
 
+/* Main container */
 main {
     max-width: 90%;
+}
+
+h1 {
+    color: var(--clr-white);
+}
+
+.title__style {
+    color: var(--clr-accent);
 }
 
 /* Passwords section */
