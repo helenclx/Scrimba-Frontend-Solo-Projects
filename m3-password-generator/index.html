@@ -17,7 +17,7 @@
 <body>
     <main>
         <h1>Generate a <span class="title__style">random password</span></h1>
-        <p>Never use an insecure password again.</p>
+        <p class="subtitle">Never use an insecure password again.</p>
         <div class="setting">
             <label for="password-length" class="setting--label">Length: <span id="password-length">15</span></label>
             <input type="range" min="4" max="32" value="15" class="setting__slider" name="password-length">
@@ -30,7 +30,6 @@
             <label for="password-symbols" class="setting--label">Include Symbols:</label>
             <input type="checkbox" name="include-symbols" id="password-symbols" checked>
         </div>
-        <div class="setting"></div>
         <button class="password-btn">Generate passwords</button>
         <hr>
         <section class="passwords">
