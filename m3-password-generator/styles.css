@@ -131,6 +131,30 @@ hr {
 }
 
 /* Passwords section */
+.passwords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.password-wrapper {
+    min-width: 14rem;
+    background-color: var(--clr-password-bg);
+    padding: 0.7rem;
+    border-radius: 0.4em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.password {
+    color: var(--clr-accent);
+}
+
+.clipboard {
+    margin-left: auto;
+}
+
 .clipboard:hover {
     cursor: pointer;
 }
