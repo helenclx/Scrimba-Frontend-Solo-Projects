@@ -107,7 +107,7 @@ body {
 main {
     max-width: 90%;
     background-color: var(--clr-container-bg);
-    padding: 4rem 2.5rem;
+    padding: 3rem 1.5rem;
 }
 
 .title__style {
@@ -138,17 +138,21 @@ hr {
 }
 
 .password-wrapper {
+    width: 100%;
     min-width: 14rem;
     background-color: var(--clr-password-bg);
     padding: 0.7rem;
     border-radius: 0.4em;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1em;
 }
 
 .password {
     color: var(--clr-accent);
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .clipboard {
@@ -169,3 +173,16 @@ hr {
 .attribution a {
     color: hsl(228, 100%, 87%);
 }
+
+/* Screen sizes larger than mobile */
+@media only screen and (min-width: 30rem) {}
+
+/* Tablet screen size */
+@media only screen and (min-width: 43.75rem) {
+    main {
+        padding: 4rem 2.5rem;
+    }
+}
+
+/* Desktop screen size */
+@media only screen and (min-width: 60rem) {}
