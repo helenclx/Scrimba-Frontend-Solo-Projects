@@ -135,10 +135,10 @@ hr {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
+    width: 100%;
 }
 
 .password-wrapper {
-    width: 100%;
     min-width: 14rem;
     background-color: var(--clr-password-bg);
     padding: 0.7rem;
@@ -151,8 +151,7 @@ hr {
 
 .password {
     color: var(--clr-accent);
-    width: 100%;
-    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .clipboard {
