@@ -211,6 +211,10 @@ hr {
     main {
         padding: 4rem 2.5rem;
     }
+
+    h1 {
+        font-size: 2.3rem;
+    }
 }
 
 /* Desktop screen size */
@@ -222,5 +226,9 @@ hr {
 
     .password-wrapper {
         min-width: 20rem;
+    }
+
+    h1 {
+        font-size: 2.7rem;
     }
 }
