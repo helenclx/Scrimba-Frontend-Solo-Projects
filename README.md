@@ -19,3 +19,10 @@ My solo projects for Scrimba's Frontend Developer Career Path: https://scrimba.c
 
 - [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m3-basketball-scoreboard/)
 - [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m3-basketball-scoreboard)
+
+### Password Generator
+
+![](m3-password-generator/screenshot.png)
+
+- [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m3-password-generator/)
+- [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m3-password-generator)
