@@ -131,6 +131,11 @@ hr {
     cursor: pointer;
 }
 
+.password-btn:focus {
+    outline: 0.2em solid var(--clr-accent);
+    outline-offset: 0.2em;
+}
+
 /* Passwords section */
 .passwords {
     display: flex;
@@ -166,6 +171,11 @@ hr {
 
 .clipboard:hover {
     cursor: pointer;
+}
+
+.clipboard:focus {
+    outline: 0.15em solid var(--clr-accent);
+    outline-offset: 0.15em;
 }
 
 /* Attribution */
