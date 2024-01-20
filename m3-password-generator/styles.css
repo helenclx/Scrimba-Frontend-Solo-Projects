@@ -148,11 +148,11 @@ hr {
     min-width: 14rem;
     background-color: var(--clr-password-bg);
     padding: 0.7rem;
-    border-radius: 0.4em;
+    border-radius: 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: 1rem;
 }
 
 .password {
@@ -165,8 +165,8 @@ hr {
     background-color: var(--clr-accent);
     color: var(--clr-white);
     border: none;
-    padding: 0.2em 0.5em;
-    border-radius: 0.3em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
 }
 
 .clipboard:hover {
@@ -200,4 +200,13 @@ hr {
 }
 
 /* Desktop screen size */
-@media only screen and (min-width: 60rem) {}
+@media only screen and (min-width: 60rem) {
+    main {
+        min-width: 45rem;
+        max-width: 55rem;
+    }
+
+    .password-wrapper {
+        min-width: 20rem;
+    }
+}
