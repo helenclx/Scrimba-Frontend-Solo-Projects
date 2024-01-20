@@ -95,6 +95,14 @@ textarea:not([rows]) {
 /* General styles */
 body {
     font-family: var(--ff-body), Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    max-width: 90%;
 }
 
 /* Passwords section */
