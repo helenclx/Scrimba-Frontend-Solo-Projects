@@ -26,3 +26,10 @@ My solo projects for Scrimba's Frontend Developer Career Path: https://scrimba.c
 
 - [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m3-password-generator/)
 - [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m3-password-generator)
+
+### Unit Converter
+
+![](m3-unit-converter/screenshot.png)
+
+- [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m3-unit-converter/)
+- [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m3-unit-converter)
