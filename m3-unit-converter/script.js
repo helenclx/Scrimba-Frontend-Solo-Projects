@@ -21,27 +21,29 @@ const gallonToLiter = 4.546;
 const kilogramToPound = 2.204;
 const poundToKilogram = 0.456;
 
-const convertUnits = () => {
-    let baseValue = inputEl.value;
-
+const convertUnits = (input) => {
     lengthEl.textContent = `
-        ${baseValue} meters = ${(baseValue * meterToFeet).toFixed(3)} feet | ${baseValue} feet = ${(baseValue * feetToMeter).toFixed(3)} meters
+        ${input} meters = ${(input * meterToFeet).toFixed(3)} feet | ${input} feet = ${(input * feetToMeter).toFixed(3)} meters
     `;
 
     volumeEl.textContent = `
-        ${baseValue} liters = ${(baseValue * literToGallon).toFixed(3)} gallons | ${baseValue} gallons = ${(baseValue * gallonToLiter).toFixed(3)} liters
+        ${input} liters = ${(input * literToGallon).toFixed(3)} gallons | ${input} gallons = ${(input * gallonToLiter).toFixed(3)} liters
     `;
 
     massEl.textContent = `
-        ${baseValue} kilograms = ${(baseValue * kilogramToPound).toFixed(3)} pounds | ${baseValue} pounds = ${(baseValue * poundToKilogram).toFixed(3)} kilograms
+        ${input} kilograms = ${(input * kilogramToPound).toFixed(3)} pounds | ${input} pounds = ${(input * poundToKilogram).toFixed(3)} kilograms
     `;
 };
 
-convertBtn.addEventListener("click", convertUnits);
+convertBtn.addEventListener("click", () => {
+    convertUnits(inputEl.value);
+    inputEl.value = "";
+});
 
 inputEl.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-        convertUnits();
+        convertUnits(inputEl.value);
+        inputEl.value = "";
     }
 });
 
