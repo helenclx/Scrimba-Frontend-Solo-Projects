@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+
+        <script src="script.js" defer></script>
+
+        <title>Unit Converter</title>
+    </head>
+    <body>
+        <main>
+            <section class="hero">
+                <h1>Metric/Imperial Unit Conversion</h1>
+                <input type="text" id="unit-input" placeholder="0" class="hero__input">
+                <button class="hero__convert-btn">Convert</button>
+            </section>
+
+            <section class="conversion">
+                <div class="conversion__unit">
+                    <h2>Length (Meter/Feet)</h2>
+                    <p id="converted-length">0 meters = 0.000 feet | 0 feet = 0.000 meters</p>
+                </div>
+                <div class="conversion__unit">
+                    <h2>Volume (Liters/Gallons)</h2>
+                    <p id="converted-volume">0 liters = 0.000 gallons | 0 gallons = 0.000 liters</p>
+                </div>
+                <div class="conversion__unit">
+                    <h2>Mass (Kilograms/Pounds)</h2>
+                    <p id="converted-mass">0 kilograms = 0.000 pounds | 0 pounds = 0.000 kilograms</p>
+                </div>
+            </section>
+        </main>
+        <footer class="attribution">
+            Coded by <a href="https://helenclx.github.io/" target="_blank">Helen Chong</a>.
+        </footer>
+    </body>
+</html>

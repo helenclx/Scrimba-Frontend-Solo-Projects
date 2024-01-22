@@ -1,0 +1,201 @@
+/* ------------------- */
+/* Custom Properties   */
+/* ------------------- */
+:root {
+    --clr-accent: #B45309;
+    --clr-white: #ffffff;
+    --clr-body-bg: #e6e6e6;
+    --clr-input-placeholder: hsla(0, 0%, 100%, 0.5);
+}
+
+/* ------------------- */
+/* CSS Reset           */
+/* ------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* ------------------- */
+/* STYLING BEGINS      */
+/* ------------------- */
+
+/* General styles */
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    background: var(--clr-body-bg);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero section */
+.hero {
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    width: 100%;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__input {
+    background: none;
+    border: 0.1rem solid var(--clr-white);
+    color: var(--clr-white);
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    max-width: 95%;
+    margin: 1.5rem 0;
+}
+
+.hero__input::placeholder {
+    color: var(--clr-input-placeholder);
+}
+
+.hero__input:focus {
+    outline: 0.05em solid var(--clr-white);
+}
+
+.hero__convert-btn {
+    border: none;
+    border-radius: 0.3rem;
+    background: var(--clr-white);
+    color: var(--clr-accent);
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding: 0.5rem 2rem;
+    width: 95%;
+    cursor: pointer;
+}
+
+.hero__convert-btn:focus {
+    outline: 0.15em solid var(--clr-white);
+    outline-offset: 0.2em;
+}
+
+/* Conversion section */
+.conversion {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.conversion__unit {
+    background: var(--clr-white);
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Attribution */
+.attribution {
+    font-size: 0.6875rem; /* 11px */
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.attribution a {
+    color: var(--clr-accent);
+}
+
+/* Desktop screen size */
+@media only screen and (min-width: 60rem) {
+    .hero__input {
+        max-width: 50rem;
+    }
+
+    .hero__convert-btn,
+    .conversion__unit {
+        width: 50rem;
+    }
+}
