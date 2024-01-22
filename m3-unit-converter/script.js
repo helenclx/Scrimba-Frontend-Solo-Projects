@@ -48,8 +48,7 @@ inputEl.addEventListener("keydown", (e) => {
 });
 
 window.onload = () => {
-    inputEl.onkeydown = inputEl.onblur = inputEl.onkeyup = function()
-    {
+    inputEl.onkeydown = inputEl.onblur = inputEl.onkeyup = () => {
         inputEl.value = inputEl.value.replace(/[^0-9]+/, "");
     }
 }
