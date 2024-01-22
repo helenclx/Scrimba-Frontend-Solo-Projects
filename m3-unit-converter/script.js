@@ -39,6 +39,12 @@ const convertUnits = () => {
 
 convertBtn.addEventListener("click", convertUnits);
 
+inputEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        convertUnits();
+    }
+});
+
 window.onload = () => {
     inputEl.onkeydown = inputEl.onblur = inputEl.onkeyup = function()
     {
