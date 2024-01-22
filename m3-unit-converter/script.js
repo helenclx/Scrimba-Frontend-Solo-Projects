@@ -21,7 +21,7 @@ const gallonToLiter = 4.546;
 const kilogramToPound = 2.204;
 const poundToKilogram = 0.456;
 
-convertBtn.addEventListener("click", () => {
+const convertUnits = () => {
     let baseValue = inputEl.value;
 
     lengthEl.textContent = `
@@ -35,7 +35,9 @@ convertBtn.addEventListener("click", () => {
     massEl.textContent = `
         ${baseValue} kilograms = ${(baseValue * kilogramToPound).toFixed(3)} pounds | ${baseValue} pounds = ${(baseValue * poundToKilogram).toFixed(3)} kilograms
     `;
-})
+};
+
+convertBtn.addEventListener("click", convertUnits);
 
 window.onload = () => {
     inputEl.onkeydown = inputEl.onblur = inputEl.onkeyup = function()
