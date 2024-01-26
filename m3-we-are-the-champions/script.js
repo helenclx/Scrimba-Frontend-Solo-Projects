@@ -10,17 +10,17 @@ const database = getDatabase(app);
 const endorsementsInDB = ref(database, "endorsements");
 
 const formEl = document.querySelector('.form');
-const endorsementInputEl = document.querySelector('#endorsement-input');
+const msgInputEl = document.querySelector('#message-input');
 const publishBtn = document.querySelector('.form__btn');
 const endorsementsEl = document.querySelector('.endorsements');
 
 publishBtn.addEventListener('click', () => {
-    addEndorsement(endorsementInputEl.value);
+    addEndorsement(msgInputEl.value);
     clearInputEl();
 });
 
 formEl.addEventListener('submit', () => {
-    addEndorsement(endorsementInputEl.value);
+    addEndorsement(msgInputEl.value);
     clearInputEl();
 });
 
@@ -29,5 +29,5 @@ const addEndorsement = (input) => {
 };
 
 const clearInputEl = () => {
-    endorsementInputEl.value = '';
+    msgInputEl.value = '';
 };
