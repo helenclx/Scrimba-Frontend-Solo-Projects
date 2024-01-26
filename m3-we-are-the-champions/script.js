@@ -16,14 +16,18 @@ const endorsementsEl = document.querySelector('.endorsements');
 
 publishBtn.addEventListener('click', () => {
     addEndorsement(endorsementInputEl.value);
-    endorsementInputEl.value = '';
+    clearInputEl();
 });
 
 formEl.addEventListener('submit', () => {
     addEndorsement(endorsementInputEl.value);
-    endorsementInputEl.value = '';
+    clearInputEl();
 });
 
 const addEndorsement = (input) => {
     push(endorsementsInDB, input);
+};
+
+const clearInputEl = () => {
+    endorsementInputEl.value = '';
 };
