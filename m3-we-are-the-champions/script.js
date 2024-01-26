@@ -8,3 +8,22 @@ const appSettings = {
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const endorsementsInDB = ref(database, "endorsements");
+
+const formEl = document.querySelector('.form');
+const inputEl = document.querySelector('#endorsement-input');
+const publishBtn = document.querySelector('.form__btn');
+const endorsementsEl = document.querySelector('.endorsements');
+
+publishBtn.addEventListener('click', () => {
+    addEndorsement(inputEl.value);
+    inputEl.value = '';
+});
+
+formEl.addEventListener('submit', () => {
+    addEndorsement(inputEl.value);
+    inputEl.value = '';
+});
+
+const addEndorsement = (input) => {
+    push(endorsementsInDB, input);
+};
