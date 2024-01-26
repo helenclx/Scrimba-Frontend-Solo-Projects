@@ -20,8 +20,15 @@
 
         <form class="form">
             <label for="message-input" class="sr-only">Enter Your Endorsement:</label>
-            <input type="text" name="endorsement" id="message-input" class="form__message" placeholder="Write your endorsement here">
-            <button type="button" class="form__btn">Publish</button>
+            <input type="text" name="message" id="message-input" class="form__message" placeholder="Write your endorsement here" required>
+
+            <label for="from-input" class="sr-only">From:</label>
+            <input type="text" name="from" id="from-input" class="form__name" placeholder="From" required>
+
+            <label for="from-input" class="sr-only">To:</label>
+            <input type="text" name="to" id="to-input" class="form__name" placeholder="To" required>
+
+            <button type="submit" class="form__btn">Publish</button>
         </form>
 
         <section class="endorsements">

@@ -11,23 +11,41 @@ const endorsementsInDB = ref(database, "endorsements");
 
 const formEl = document.querySelector('.form');
 const msgInputEl = document.querySelector('#message-input');
+const fromInputEl = document.querySelector('#from-input');
+const toInputEl = document.querySelector('#to-input');
 const publishBtn = document.querySelector('.form__btn');
 const endorsementsEl = document.querySelector('.endorsements');
 
-publishBtn.addEventListener('click', () => {
-    addEndorsement(msgInputEl.value);
+let endorsementObj = {
+    from: '',
+    to: '',
+    message: ''
+};
+
+publishBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    addEndorsement();
     clearInputEl();
 });
 
-formEl.addEventListener('submit', () => {
-    addEndorsement(msgInputEl.value);
+formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addEndorsement();
     clearInputEl();
 });
 
-const addEndorsement = (input) => {
-    push(endorsementsInDB, input);
+const addEndorsement = () => {
+    endorsementObj = {
+        from: fromInputEl.value,
+        to: toInputEl.value,
+        message: msgInputEl.value
+    }
+    console.log(endorsementObj);
+    push(endorsementsInDB, endorsementObj);
 };
 
 const clearInputEl = () => {
     msgInputEl.value = '';
+    fromInputEl.value = '';
+    toInputEl.value = '';
 };
