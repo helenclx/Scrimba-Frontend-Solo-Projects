@@ -1,7 +1,9 @@
 /* ------------------- */
 /* Custom Properties   */
 /* ------------------- */
-:root
+:root {
+    --ff-body: 'Josefin Sans';
+}
 
 /* ------------------- */
 /* CSS Reset           */
@@ -85,6 +87,9 @@ textarea:not([rows]) {
 /* ------------------- */
 
 /* General styles */
+body {
+    font-family: var(--ff-body), Arial, Helvetica, sans-serif;
+}
 
 /* Utility classes */
 .sr-only {
