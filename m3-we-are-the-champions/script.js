@@ -36,6 +36,7 @@ formEl.addEventListener('submit', (e) => {
 
 const addEndorsement = () => {
     endorsementObj = {
+        ...endorsementObj,
         from: fromInputEl.value,
         to: toInputEl.value,
         message: msgInputEl.value
