@@ -6,7 +6,7 @@
     --clr-white: #ffffff;
     --clr-input-bg: #444059;
     --clr-placeholder: #8F8F8F;
-    --clr-btn-bg: #8B5CF6;
+    --clr-btn-bg: #A78BFA;
 
     --ff-body: 'Josefin Sans';
 }
@@ -95,6 +95,8 @@ textarea:not([rows]) {
 /* General styles */
 body {
     font-family: var(--ff-body), Arial, Helvetica, sans-serif;
+    background-color: var(--clr-body-bg);
+    color: var(--clr-white);
 }
 
 /* Utility classes */
@@ -111,8 +113,31 @@ body {
 }
 
 /* Form section */
+.form__message,
+.form__name {
+    background-color: var(--clr-input-bg);
+    color: var(--clr-white);
+}
+
+.form__message::placeholder,
+.form__name::placeholder {
+    color: var(--clr-placeholder);
+}
+
+.form__btn {
+    background-color: var(--clr-btn-bg);
+    border: none;
+}
 
 /* Endorsements section */
+.endorsement {
+    background-color: var(--clr-white);
+    color: var(--clr-body-bg);
+}
+
+.endorsement__name {
+    font-weight: 700;
+}
 
 /* Attribution */
 .attribution {
@@ -122,5 +147,5 @@ body {
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--clr-btn-bg);
 }
