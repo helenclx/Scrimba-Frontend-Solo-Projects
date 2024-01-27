@@ -10,6 +10,8 @@
 
     --ff-title: 'Josefin Sans';
     --ff-regular: 'Inter';
+
+    --border-radius: 0.5rem;
 }
 
 /* ------------------- */
@@ -142,6 +144,8 @@ h1, h2 {
 .form__name {
     background-color: var(--clr-input-bg);
     color: var(--clr-white);
+    border-radius: var(--border-radius);
+    border: none;
 }
 
 .form__message::placeholder,
@@ -154,6 +158,7 @@ h1, h2 {
     font-weight: 700;
     background-color: var(--clr-btn-bg);
     border: none;
+    border-radius: var(--border-radius);
 }
 
 /* Endorsements section */
