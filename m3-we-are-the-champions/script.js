@@ -50,3 +50,12 @@ const clearInputEl = () => {
     fromInputEl.value = '';
     toInputEl.value = '';
 };
+
+onValue(endorsementsInDB, (snapshot) => {
+    if (snapshot.exists()) {
+        let endorsementsArr = Object.entries(snapshot.val());
+        console.log(endorsementsArr);
+    } else {
+        endorsementsEl.innerHTML += 'No endorsements here... yet';
+    }
+});
