@@ -8,7 +8,8 @@
     --clr-placeholder: #8F8F8F;
     --clr-btn-bg: #A78BFA;
 
-    --ff-body: 'Josefin Sans';
+    --ff-title: 'Josefin Sans';
+    --ff-regular: 'Inter';
 }
 
 /* ------------------- */
@@ -94,12 +95,16 @@ textarea:not([rows]) {
 
 /* General styles */
 body {
-    font-family: var(--ff-body), Arial, Helvetica, sans-serif;
+    font-family: var(--ff-regular), Arial, Helvetica, sans-serif;
     background-color: var(--clr-body-bg);
     color: var(--clr-white);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1, h2 {
+    font-family: var(--ff-title), Arial, Helvetica, sans-serif;
 }
 
 /* Utility classes */
@@ -133,6 +138,8 @@ body {
 }
 
 .form__btn {
+    font-family: var(--ff-title), Arial, Helvetica, sans-serif;
+    font-weight: 700;
     background-color: var(--clr-btn-bg);
     border: none;
 }
