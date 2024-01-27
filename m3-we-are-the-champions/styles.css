@@ -97,6 +97,9 @@ body {
     font-family: var(--ff-body), Arial, Helvetica, sans-serif;
     background-color: var(--clr-body-bg);
     color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Utility classes */
@@ -110,6 +113,11 @@ body {
     clip: rect(0,0,0,0);
     white-space: nowrap;
     border: 0;
+}
+
+/* Main container */
+.main {
+    max-width: 90%;
 }
 
 /* Form section */
@@ -130,9 +138,21 @@ body {
 }
 
 /* Endorsements section */
+.endorsements__title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.endorsements__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
 .endorsement {
     background-color: var(--clr-white);
     color: var(--clr-body-bg);
+    padding: 0.7rem;
 }
 
 .endorsement__name {
