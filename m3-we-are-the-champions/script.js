@@ -35,14 +35,18 @@ formEl.addEventListener('submit', (e) => {
 });
 
 const addEndorsement = () => {
-    endorsementObj = {
-        ...endorsementObj,
-        from: fromInputEl.value,
-        to: toInputEl.value,
-        message: msgInputEl.value
+    if (msgInputEl.value === '' || fromInputEl.value === '' || toInputEl.value === '') {
+        alert('Please fill out all input fields before publishing');
+    } else {
+        endorsementObj = {
+            ...endorsementObj,
+            from: fromInputEl.value,
+            to: toInputEl.value,
+            message: msgInputEl.value
+        }
+        console.log(endorsementObj);
+        push(endorsementsInDB, endorsementObj);
     }
-    console.log(endorsementObj);
-    push(endorsementsInDB, endorsementObj);
 };
 
 const clearInputEl = () => {
