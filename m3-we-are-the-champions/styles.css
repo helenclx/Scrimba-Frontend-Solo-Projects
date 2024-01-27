@@ -101,6 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem 0 1rem;
 }
 
 h1, h2 {
@@ -125,6 +126,17 @@ h1, h2 {
     max-width: 90%;
 }
 
+.main__img {
+    width: 7rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.main__title {
+    text-align: center;
+    margin: 1rem 0;
+}
+
 /* Form section */
 .form__message,
 .form__name {
@@ -147,7 +159,7 @@ h1, h2 {
 /* Endorsements section */
 .endorsements__title {
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin: 1rem 0;
 }
 
 .endorsements__list {
