@@ -2,6 +2,12 @@
 /* Custom Properties   */
 /* ------------------- */
 :root {
+    --clr-body-bg: #1B1924;
+    --clr-white: #ffffff;
+    --clr-input-bg: #444059;
+    --clr-placeholder: #8F8F8F;
+    --clr-btn-bg: #8B5CF6;
+
     --ff-body: 'Josefin Sans';
 }
 
