@@ -226,9 +226,21 @@ h1, h2 {
     color: var(--clr-btn-bg);
 }
 
+/* Tablet screen size */
+@media only screen and (min-width: 43.75rem) {
+    .endorsements__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 /* Desktop screen size */
 @media only screen and (min-width: 60rem) {
     .main {
-        max-width: 45rem;
+        max-width: 50rem;
+    }
+
+    .endorsements__list {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
