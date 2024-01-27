@@ -14,7 +14,7 @@ const msgInputEl = document.querySelector('#message-input');
 const fromInputEl = document.querySelector('#from-input');
 const toInputEl = document.querySelector('#to-input');
 const publishBtn = document.querySelector('.form__btn');
-const endorsementsEl = document.querySelector('.endorsements');
+const endorsementListEl = document.querySelector('.endorsements__list');
 
 let endorsementObj = {
     from: '',
@@ -55,7 +55,29 @@ onValue(endorsementsInDB, (snapshot) => {
     if (snapshot.exists()) {
         let endorsementsArr = Object.entries(snapshot.val()).reverse();
         console.log(endorsementsArr);
+
+        clearEndorsementListEl();
+
+        endorsementsArr.forEach((item) => {
+            renderEndorsement(item);
+        });
     } else {
-        endorsementsEl.innerHTML += 'No endorsements here... yet';
+        endorsementListEl.innerHTML += 'No endorsements here... yet';
     }
 });
+
+const clearEndorsementListEl = () => {
+    endorsementListEl.innerHTML = '';
+};
+
+const renderEndorsement = (item) => {
+    const itemValue = item[1];
+
+    endorsementListEl.innerHTML += `
+        <div class="endorsement">
+            <p class="endorsement__name">To ${itemValue.to}</p>
+            <p>${itemValue.message}</p>
+            <p class="endorsement__name">From ${itemValue.from}</p>
+        </div>
+    `;
+};
