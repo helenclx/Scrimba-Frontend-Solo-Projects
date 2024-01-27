@@ -53,7 +53,7 @@ const clearInputEl = () => {
 
 onValue(endorsementsInDB, (snapshot) => {
     if (snapshot.exists()) {
-        let endorsementsArr = Object.entries(snapshot.val());
+        let endorsementsArr = Object.entries(snapshot.val()).reverse();
         console.log(endorsementsArr);
     } else {
         endorsementsEl.innerHTML += 'No endorsements here... yet';
