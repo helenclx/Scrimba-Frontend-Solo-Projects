@@ -33,3 +33,10 @@ My solo projects for Scrimba's Frontend Developer Career Path: https://scrimba.c
 
 - [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m3-unit-converter/)
 - [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m3-unit-converter)
+
+### We are the Champions
+
+![](m3-we-are-the-champions/screenshot.png)
+
+- [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m3-we-are-the-champions/)
+- [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m3-we-are-the-champions)
