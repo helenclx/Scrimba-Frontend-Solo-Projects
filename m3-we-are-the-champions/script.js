@@ -80,7 +80,7 @@ const renderEndorsement = (item) => {
     endorsementListEl.innerHTML += `
         <div class="endorsement">
             <p class="endorsement__name">To ${itemValue.to}</p>
-            <p>${itemValue.message}</p>
+            <p class="endorsement__msg">${itemValue.message}</p>
             <p class="endorsement__name">From ${itemValue.from}</p>
         </div>
     `;

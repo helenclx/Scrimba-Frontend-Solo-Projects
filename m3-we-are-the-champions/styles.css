@@ -207,6 +207,10 @@ h1, h2 {
     padding: 0.7rem;
 }
 
+.endorsement__msg {
+    margin: 0.75rem 0;
+}
+
 .endorsement__name {
     font-weight: 700;
 }
