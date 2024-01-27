@@ -24,11 +24,13 @@
             <label for="message-input" class="sr-only">Enter Your Endorsement:</label>
             <textarea type="text" rows="4" name="message" id="message-input" class="form__message" placeholder="Write your endorsement here" required></textarea>
 
-            <label for="from-input" class="sr-only">From:</label>
-            <input type="text" name="from" id="from-input" class="form__name" placeholder="From" required>
+            <div class="form__names">
+                <label for="from-input" class="sr-only">From:</label>
+                <input type="text" name="from" id="from-input" class="form__name" placeholder="From" required>
 
-            <label for="to-input" class="sr-only">To:</label>
-            <input type="text" name="to" id="to-input" class="form__name" placeholder="To" required>
+                <label for="to-input" class="sr-only">To:</label>
+                <input type="text" name="to" id="to-input" class="form__name" placeholder="To" required>
+            </div>
 
             <button type="submit" class="form__btn">Publish</button>
         </form>

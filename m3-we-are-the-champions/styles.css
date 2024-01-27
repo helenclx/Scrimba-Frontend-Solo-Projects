@@ -140,17 +140,38 @@ h1, h2 {
 }
 
 /* Form section */
+.form,
+.form__names {
+    display: grid;
+    gap: 0.7rem;
+}
+
 .form__message,
 .form__name {
     background-color: var(--clr-input-bg);
     color: var(--clr-white);
     border-radius: var(--border-radius);
     border: none;
+    padding: 0.7rem 1rem;
+    width: 100%;
 }
 
 .form__message::placeholder,
 .form__name::placeholder {
     color: var(--clr-placeholder);
+}
+
+.form__message:focus,
+.form__name:focus {
+    outline: 0.15em solid var(--clr-white);
+}
+
+.form__names {
+    grid-template-columns: 1fr 1fr;
+}
+
+.form__name {
+    text-align: center;
 }
 
 .form__btn {
@@ -159,6 +180,13 @@ h1, h2 {
     background-color: var(--clr-btn-bg);
     border: none;
     border-radius: var(--border-radius);
+    padding: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.form__btn:focus {
+    outline: 0.2em solid var(--clr-btn-bg);
+    outline-offset: 0.15em;
 }
 
 /* Endorsements section */
