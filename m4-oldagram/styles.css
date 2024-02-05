@@ -2,6 +2,11 @@
 /* Custom Properties   */
 /* ------------------- */
 :root {
+    --clr-body-bg: #EDEDED;
+    --clr-post-bg: #fff;
+    --clr-text: #0d0d0d;
+    --clr-stroke: #C6C6C6;
+
     --ff-body: 'Source Sans 3';
 }
 
