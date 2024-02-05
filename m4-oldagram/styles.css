@@ -120,7 +120,8 @@ body {
     border-radius: 50rem;
 }
 
-.header__avatar {
+.header__avatar,
+.post__author--avatar {
     width: 3rem;
 }
 
@@ -132,6 +133,8 @@ body {
 
 .post__author {
     display: flex;
+    gap: 0.75rem;
+    padding: 0.5rem;
 }
 
 .post__content--icons {
