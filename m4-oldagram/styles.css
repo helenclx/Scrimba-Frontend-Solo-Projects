@@ -94,6 +94,26 @@ textarea:not([rows]) {
 /* General styles */
 body {
     font-family: var(--ff-body), Arial, Helvetica, sans-serif;
+    background-color: var(--clr-body-bg);
+}
+
+/* Header */
+.header {
+    background-color: var(--clr-post-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 0.1rem solid var(--clr-stroke);
+}
+
+.header__logo{
+    width: 10rem;
+}
+
+.header__avatar {
+    width: 3rem;
+    border-radius: 50rem;
 }
 
 /* Attribution */
@@ -106,3 +126,12 @@ body {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+/* Screen sizes larger than mobile */
+@media only screen and (min-width: 30rem) {}
+
+/* Tablet screen size */
+@media only screen and (min-width: 43.75rem) {}
+
+/* Desktop screen size */
+@media only screen and (min-width: 60rem) {}
