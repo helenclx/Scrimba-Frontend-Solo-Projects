@@ -97,9 +97,13 @@ body {
     background-color: var(--clr-body-bg);
 }
 
-/* Header */
-.header {
+/* Class styles */
+.header,
+.post {
     background-color: var(--clr-post-bg);
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,13 +111,31 @@ body {
     border-bottom: 0.1rem solid var(--clr-stroke);
 }
 
-.header__logo{
+.header__logo {
     width: 10rem;
+}
+
+.header__avatar,
+.post__author--avatar {
+    border-radius: 50rem;
 }
 
 .header__avatar {
     width: 3rem;
-    border-radius: 50rem;
+}
+
+.post__author--name,
+.post__content-likes,
+.post__content--username {
+    font-weight: 700;
+}
+
+.post__author {
+    display: flex;
+}
+
+.post__content--icons {
+    display: flex;
 }
 
 /* Attribution */
