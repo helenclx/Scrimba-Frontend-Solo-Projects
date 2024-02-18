@@ -132,7 +132,7 @@ body {
 }
 
 .post__author--name,
-.post__content-likes,
+.post__content--likes,
 .post__content--username {
     font-weight: 700;
 }
@@ -152,6 +152,10 @@ body {
 
 .post__img {
     width: 100%;
+}
+
+.post__img:hover {
+    cursor: pointer;
 }
 
 .post__content--icons {
