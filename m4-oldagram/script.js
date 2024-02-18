@@ -15,7 +15,11 @@ const getPostsHTML = () => {
                 <img src="${post.post}" alt="Illustration of ${post.name}" class="post__img" data-post="${post.id}">
                 <section class="post__content">
                     <div class="post__content--icons">
-                        <img src="images/icon-heart.png" alt="" data-like="${post.id}">
+                        <img
+                            src="${post.isLiked ? "images/icon-heart-liked.png" : "images/icon-heart.png"}"
+                            alt=""
+                            data-like="${post.id}"
+                        >
                         <img src="images/icon-comment.png" alt="">
                         <img src="images/icon-dm.png" alt="">
                     </div>
