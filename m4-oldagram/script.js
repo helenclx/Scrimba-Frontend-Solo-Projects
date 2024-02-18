@@ -12,7 +12,12 @@ const getPostsHTML = () => {
                         <p class="post__author--location">${post.location}</p>
                     </div>
                 </section>
-                <img src="${post.post}" alt="Illustration of ${post.name}" class="post__img" data-post="${post.id}">
+                <img
+                    src="${post.post}"
+                    alt="Illustration of ${post.name}"
+                    class="post__img"
+                    data-post="${post.id}"
+                >
                 <section class="post__content">
                     <div class="post__content--icons">
                         <img
