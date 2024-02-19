@@ -76,13 +76,20 @@ const clearEndorsementListEl = () => {
 };
 
 const renderEndorsement = (item) => {
+    const itemID = item[0];
     const itemValue = item[1];
 
     endorsementListEl.innerHTML += `
         <div class="endorsement">
             <p class="endorsement__name">To ${itemValue.to}</p>
             <p class="endorsement__msg">${itemValue.message}</p>
-            <p class="endorsement__name">From ${itemValue.from}</p>
+            <div class="endorsement__footer">
+                <p class="endorsement__name">From ${itemValue.from}</p>
+                <p class="endorsement__likes">
+                    <i class="fa-solid fa-heart" data-like="${itemID}"></i>
+                    <span id="likes=${itemID}">${itemValue.likes}</span>
+                </p>
+            </div>
         </div>
     `;
 };
