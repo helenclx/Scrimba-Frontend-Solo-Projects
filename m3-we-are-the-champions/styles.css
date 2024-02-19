@@ -211,6 +211,11 @@ h1, h2 {
     margin: 0.75rem 0;
 }
 
+.endorsement__footer {
+    display: flex;
+    justify-content: space-between;
+}
+
 .endorsement__name {
     font-weight: 700;
 }
