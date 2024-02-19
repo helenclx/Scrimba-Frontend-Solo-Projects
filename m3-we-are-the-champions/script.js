@@ -86,7 +86,7 @@ onValue(endorsementsInDB, (snapshot) => {
             }
         });
     } else {
-        endorsementListEl.textContent += 'No endorsements here... yet';
+        endorsementListEl.textContent = 'No endorsements here... yet';
     }
 });
 
