@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js'
-import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js'
+import { getDatabase, ref, push, onValue, update } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js'
 
 const appSettings = {
     databaseURL: 'https://we-are-the-champions-db846-default-rtdb.asia-southeast1.firebasedatabase.app/'
@@ -45,7 +45,7 @@ const addEndorsement = () => {
             to: toInputEl.value,
             message: msgInputEl.value
         }
-        console.log(endorsementObj);
+        console.log('Entered endorsement:', endorsementObj);
         push(endorsementsInDB, endorsementObj);
     }
 };
@@ -69,9 +69,14 @@ onValue(endorsementsInDB, (snapshot) => {
 
         document.addEventListener('click', (e) => {
             if (e.target.dataset.like) {
-                const targetEndoesementArr = endorsementsArr.filter(endorsement => endorsement[0] === e.target.dataset.like)[0];
-
+                let targetEndoesementArr = [];
+                endorsementsArr.forEach(endorsement => {
+                    if (endorsement[0] === e.target.dataset.like) {
+                        targetEndoesementArr = endorsement;
+                    }
+                });
                 targetEndoesementArr[1].likes++;
+                update(ref(database, `endorsements/${e.target.dataset.like}`), targetEndoesementArr[1]);
 
                 clearEndorsementListEl();
 
