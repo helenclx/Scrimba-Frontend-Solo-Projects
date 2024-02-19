@@ -75,14 +75,18 @@ onValue(endorsementsInDB, (snapshot) => {
                         targetEndoesementArr = endorsement;
                     }
                 });
-                targetEndoesementArr[1].likes++;
-                update(ref(database, `endorsements/${e.target.dataset.like}`), targetEndoesementArr[1]);
 
-                clearEndorsementListEl();
+                if (!localStorage.getItem(e.target.dataset.like)) {
+                    targetEndoesementArr[1].likes++;
+                    localStorage.setItem(e.target.dataset.like, 'isLiked');
+                    update(ref(database, `endorsements/${e.target.dataset.like}`), targetEndoesementArr[1]);
 
-                endorsementsArr.forEach((item) => {
-                    renderEndorsement(item);
-                });
+                    clearEndorsementListEl();
+
+                    endorsementsArr.forEach((item) => {
+                        renderEndorsement(item);
+                    });
+                }
             }
         });
     } else {
@@ -98,6 +102,11 @@ const renderEndorsement = (item) => {
     const itemID = item[0];
     const itemValue = item[1];
 
+    let likedClass = '';
+    if (localStorage.getItem(itemID) === 'isLiked') {
+        likedClass = 'liked';
+    }
+
     endorsementListEl.innerHTML += `
         <div class="endorsement">
             <p class="endorsement__name">To ${itemValue.to}</p>
@@ -105,7 +114,7 @@ const renderEndorsement = (item) => {
             <div class="endorsement__footer">
                 <p class="endorsement__name">From ${itemValue.from}</p>
                 <p class="endorsement__likes">
-                    <i class="fa-solid fa-heart" data-like="${itemID}"></i>
+                    <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
                     <span id="likes-${itemID}">${itemValue.likes}</span>
                 </p>
             </div>
