@@ -7,6 +7,7 @@
     --clr-input-bg: #444059;
     --clr-placeholder: #8F8F8F;
     --clr-btn-bg: #A78BFA;
+    --clr-liked: red;
 
     --ff-title: 'Josefin Sans';
     --ff-regular: 'Inter';
@@ -218,6 +219,10 @@ h1, h2 {
 
 .endorsement__name {
     font-weight: 700;
+}
+
+.liked {
+    color: var(--clr-liked);
 }
 
 /* Attribution */
