@@ -19,7 +19,8 @@ const endorsementListEl = document.querySelector('.endorsements__list');
 let endorsementObj = {
     from: '',
     to: '',
-    message: ''
+    message: '',
+    likes: 0
 };
 
 publishBtn.addEventListener('click', (e) => {
