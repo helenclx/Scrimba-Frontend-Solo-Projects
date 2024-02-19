@@ -225,8 +225,18 @@ h1, h2 {
     font-weight: 700;
 }
 
+.endorsement__likes {
+    background-color: transparent;
+    border: none;
+    border-radius: 0.15em;
+}
+
 .endorsement__likes:hover {
     cursor: pointer;
+}
+
+.endorsement__likes:focus {
+    outline: 0.15em solid var(--clr-body-bg);
 }
 
 .liked {

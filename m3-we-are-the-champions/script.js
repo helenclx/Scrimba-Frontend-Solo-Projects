@@ -113,10 +113,10 @@ const renderEndorsement = (item) => {
             <p class="endorsement__msg">${itemValue.message}</p>
             <div class="endorsement__footer">
                 <p class="endorsement__name">From ${itemValue.from}</p>
-                <p class="endorsement__likes">
+                <button class="endorsement__likes" aria-label="Like this endorsement">
                     <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
                     <span id="likes-${itemID}">${itemValue.likes}</span>
-                </p>
+                </button>
             </div>
         </div>
     `;
