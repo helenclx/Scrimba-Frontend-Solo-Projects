@@ -87,7 +87,7 @@ const renderEndorsement = (item) => {
                 <p class="endorsement__name">From ${itemValue.from}</p>
                 <p class="endorsement__likes">
                     <i class="fa-solid fa-heart" data-like="${itemID}"></i>
-                    <span id="likes=${itemID}">${itemValue.likes}</span>
+                    <span id="likes-${itemID}">${itemValue.likes}</span>
                 </p>
             </div>
         </div>
