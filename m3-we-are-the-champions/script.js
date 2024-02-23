@@ -121,10 +121,7 @@ const renderEndorsement = (item) => {
     newEndorsementFrom.textContent = `From ${itemValue.from}`;
 
     endorsementListEl.append(newEndorsementDiv);
-    newEndorsementDiv.append(newEndorsementTo);
-    newEndorsementDiv.append(newEndorsementMsg);
-
-    newEndorsementDiv.append(newEndorsemenFooter);
+    newEndorsementDiv.append(newEndorsementTo, newEndorsementMsg, newEndorsemenFooter);
     newEndorsemenFooter.append(newEndorsementFrom);
 
     let likedClass = '';
