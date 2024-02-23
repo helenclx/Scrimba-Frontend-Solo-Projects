@@ -107,17 +107,49 @@ const renderEndorsement = (item) => {
         likedClass = 'liked';
     }
 
-    endorsementListEl.innerHTML += `
-        <div class="endorsement">
-            <p class="endorsement__name">To ${itemValue.to}</p>
-            <p class="endorsement__msg">${itemValue.message}</p>
-            <div class="endorsement__footer">
-                <p class="endorsement__name">From ${itemValue.from}</p>
-                <button class="endorsement__likes" aria-label="Like this endorsement">
-                    <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
-                    <span id="likes-${itemID}">${itemValue.likes}</span>
-                </button>
-            </div>
-        </div>
+    // endorsementListEl.innerHTML += `
+    //     <div class="endorsement">
+    //         <p class="endorsement__name">To ${itemValue.to}</p>
+    //         <p class="endorsement__msg">${itemValue.message}</p>
+    //         <div class="endorsement__footer">
+    //             <p class="endorsement__name">From ${itemValue.from}</p>
+    //             <button class="endorsement__likes" aria-label="Like this endorsement">
+    //                 <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
+    //                 <span id="likes-${itemID}">${itemValue.likes}</span>
+    //             </button>
+    //         </div>
+    //     </div>
+    // `;
+
+    const newEndorsementDiv = document.createElement('div');
+    newEndorsementDiv.classList.add('endorsement');
+
+    const newEndorsementTo = document.createElement('p');
+    newEndorsementTo.classList.add('endorsement__name');
+    newEndorsementTo.textContent = `To ${itemValue.to}`;
+
+    const newEndorsemenFooter = document.createElement('div');
+    newEndorsemenFooter.classList.add('endorsement__footer');
+
+    const newEndorsementMsg = document.createElement('p');
+    newEndorsementMsg.classList.add('endorsement__msg');
+    newEndorsementMsg.textContent = itemValue.message;
+
+    const newEndorsementFrom = document.createElement('p');
+    newEndorsementFrom.classList.add('endorsement__name');
+    newEndorsementFrom.textContent = `From ${itemValue.from}`;
+
+    endorsementListEl.append(newEndorsementDiv);
+    newEndorsementDiv.append(newEndorsementTo);
+    newEndorsementDiv.append(newEndorsementMsg);
+
+    newEndorsementDiv.append(newEndorsemenFooter);
+    newEndorsemenFooter.append(newEndorsementFrom);
+
+    newEndorsemenFooter.innerHTML += `
+        <button class="endorsement__likes" aria-label="Like this endorsement">
+            <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
+            <span id="likes-${itemID}">${itemValue.likes}</span>
+        </button>
     `;
 };
