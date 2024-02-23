@@ -109,29 +109,32 @@ const renderEndorsement = (item) => {
     newEndorsementTo.classList.add('endorsement__name');
     newEndorsementTo.textContent = `To ${itemValue.to}`;
 
-    const newEndorsemenFooter = document.createElement('div');
-    newEndorsemenFooter.classList.add('endorsement__footer');
-
     const newEndorsementMsg = document.createElement('p');
     newEndorsementMsg.classList.add('endorsement__msg');
     newEndorsementMsg.textContent = itemValue.message;
+
+    const newEndorsemenFooter = document.createElement('div');
+    newEndorsemenFooter.classList.add('endorsement__footer');
 
     const newEndorsementFrom = document.createElement('p');
     newEndorsementFrom.classList.add('endorsement__name');
     newEndorsementFrom.textContent = `From ${itemValue.from}`;
 
+    const likeBtn = document.createElement('button');
+    likeBtn.classList.add('endorsement__likes');
+
+    const fontAwesomeIcon = document.createElement('i');
+    fontAwesomeIcon.classList.add('fa-solid', 'fa-heart');
+    localStorage.getItem(itemID)  === 'isLiked' ? fontAwesomeIcon.classList.add('liked') : null;
+    fontAwesomeIcon.setAttribute('data-like', itemID);
+
+    const likeCountEl = document.createElement('span');
+    likeCountEl.id = `likes-${itemID}`;
+    likeCountEl.textContent = ` ${itemValue.likes}`;
+
+    likeBtn.append(fontAwesomeIcon, likeCountEl);
+
     endorsementListEl.append(newEndorsementDiv);
     newEndorsementDiv.append(newEndorsementTo, newEndorsementMsg, newEndorsemenFooter);
-    newEndorsemenFooter.append(newEndorsementFrom);
-
-    let likedClass = '';
-    if (localStorage.getItem(itemID) === 'isLiked') {
-        likedClass = 'liked';
-    }
-    newEndorsemenFooter.innerHTML += `
-        <button class="endorsement__likes" aria-label="Like this endorsement">
-            <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
-            <span id="likes-${itemID}">${itemValue.likes}</span>
-        </button>
-    `;
+    newEndorsemenFooter.append(newEndorsementFrom, likeBtn);
 };
