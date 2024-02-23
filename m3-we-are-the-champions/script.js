@@ -102,25 +102,6 @@ const renderEndorsement = (item) => {
     const itemID = item[0];
     const itemValue = item[1];
 
-    let likedClass = '';
-    if (localStorage.getItem(itemID) === 'isLiked') {
-        likedClass = 'liked';
-    }
-
-    // endorsementListEl.innerHTML += `
-    //     <div class="endorsement">
-    //         <p class="endorsement__name">To ${itemValue.to}</p>
-    //         <p class="endorsement__msg">${itemValue.message}</p>
-    //         <div class="endorsement__footer">
-    //             <p class="endorsement__name">From ${itemValue.from}</p>
-    //             <button class="endorsement__likes" aria-label="Like this endorsement">
-    //                 <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
-    //                 <span id="likes-${itemID}">${itemValue.likes}</span>
-    //             </button>
-    //         </div>
-    //     </div>
-    // `;
-
     const newEndorsementDiv = document.createElement('div');
     newEndorsementDiv.classList.add('endorsement');
 
@@ -146,6 +127,10 @@ const renderEndorsement = (item) => {
     newEndorsementDiv.append(newEndorsemenFooter);
     newEndorsemenFooter.append(newEndorsementFrom);
 
+    let likedClass = '';
+    if (localStorage.getItem(itemID) === 'isLiked') {
+        likedClass = 'liked';
+    }
     newEndorsemenFooter.innerHTML += `
         <button class="endorsement__likes" aria-label="Like this endorsement">
             <i class="fa-solid fa-heart ${likedClass}" data-like="${itemID}"></i>
