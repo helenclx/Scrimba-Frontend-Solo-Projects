@@ -189,6 +189,10 @@ h1, h2 {
     font-size: 1.3rem;
 }
 
+.form__btn:hover {
+    cursor: pointer;
+}
+
 .form__btn:focus {
     outline: 0.2em solid var(--clr-btn-bg);
     outline-offset: 0.15em;
