@@ -1,14 +1,16 @@
+// Import Firebase
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js'
 import { getDatabase, ref, push, onValue, update } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js'
 
+// Set up Firebase database
 const appSettings = {
     databaseURL: 'https://we-are-the-champions-db846-default-rtdb.asia-southeast1.firebasedatabase.app/'
 };
-
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const endorsementsInDB = ref(database, "endorsements");
 
+// Get DOM elements
 const formEl = document.querySelector('.form');
 const msgInputEl = document.querySelector('#message-input');
 const fromInputEl = document.querySelector('#from-input');
@@ -16,6 +18,7 @@ const toInputEl = document.querySelector('#to-input');
 const publishBtn = document.querySelector('.form__btn');
 const endorsementListEl = document.querySelector('.endorsements__list');
 
+// Initiate endorsement object
 let endorsementObj = {
     from: '',
     to: '',
@@ -23,6 +26,7 @@ let endorsementObj = {
     likes: 0
 };
 
+// Form submission events
 publishBtn.addEventListener('click', (e) => {
     e.preventDefault();
     addEndorsement();
@@ -56,6 +60,7 @@ const clearInputEl = () => {
     toInputEl.value = '';
 };
 
+// Load data from the Firebase database
 onValue(endorsementsInDB, (snapshot) => {
     if (snapshot.exists()) {
         let endorsementsArr = Object.entries(snapshot.val()).reverse();
@@ -67,6 +72,7 @@ onValue(endorsementsInDB, (snapshot) => {
             renderEndorsement(item);
         });
 
+        // Event for when a user likes an endorsement
         document.addEventListener('click', (e) => {
             if (e.target.dataset.like) {
                 let targetEndoesementArr = [];
@@ -90,14 +96,16 @@ onValue(endorsementsInDB, (snapshot) => {
             }
         });
     } else {
-        endorsementListEl.textContent = 'No endorsements here... yet';
+        endorsementListEl.textContent = 'No endorsements here... yet.';
     }
 });
 
+// Prevent rendering any endorsement more than once
 const clearEndorsementListEl = () => {
     endorsementListEl.innerHTML = '';
 };
 
+// Render each endorsement
 const renderEndorsement = (item) => {
     const itemID = item[0];
     const itemValue = item[1];
