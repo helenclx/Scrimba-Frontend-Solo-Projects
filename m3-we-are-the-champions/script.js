@@ -125,7 +125,7 @@ const renderEndorsement = (item) => {
 
     const fontAwesomeIcon = document.createElement('i');
     fontAwesomeIcon.classList.add('fa-solid', 'fa-heart');
-    localStorage.getItem(itemID)  === 'isLiked' ? fontAwesomeIcon.classList.add('liked') : null;
+    localStorage.getItem(itemID)  === 'isLiked' && fontAwesomeIcon.classList.add('liked');
     fontAwesomeIcon.setAttribute('data-like', itemID);
 
     const likeCountEl = document.createElement('span');
