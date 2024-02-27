@@ -31,3 +31,11 @@ const renderMenuItem = (menu) => {
     }).join('');
 };
 menuEl.innerHTML = renderMenuItem(menuArray);
+
+const addOrderBtns = document.querySelectorAll('.menu__food--add-btn');
+addOrderBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        console.log(`Button no. ${index} clicked`);
+        orderEl.classList.remove('hidden');
+    });
+});
