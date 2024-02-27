@@ -2,6 +2,7 @@ import menuArray from './data.js'
 
 const menuEl = document.querySelector('.menu');
 const orderEl = document.querySelector('.order');
+const orderListEl = document.querySelector('.order__list');
 const totalPriceEl = document.querySelector('.order__total--price');
 const orderSubmitBtn = document.querySelector('.order__submit-btn');
 const modalEl = document.querySelector('.modal');
@@ -36,8 +37,19 @@ addOrderBtns.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         console.log(`Button no. ${index} clicked`);
         orderEl.classList.remove('hidden');
+        renderOrderItem();
     });
 });
+
+const renderOrderItem = () => {
+    orderListEl.innerHTML += `
+        <div class="order__item">
+            <h3 class="order__food">Pizza</h3>
+            <button class="order__remove-btn">Remove</button>
+            <p class="order__price">$14</p>
+        </div>
+    `;
+};
 
 orderSubmitBtn.addEventListener('click', () => {
     modalEl.classList.remove('hidden');
