@@ -42,7 +42,9 @@ document.addEventListener('click', (e) => {
         menuArray.forEach(item => {
             if (item.id === Number(e.target.dataset.add)) {
                 orderedItems.push(item);
+                totalPrice += item.price;
                 console.log("Ordered items: ", orderedItems);
+                console.log("Total price: ", totalPrice);
                 renderOrderItem(item.name, item.price);
             }
         });
@@ -57,6 +59,8 @@ const renderOrderItem = (name, price) => {
             <p class="order__price">$${price}</p>
         </div>
     `;
+
+    totalPriceEl.textContent = `$${totalPrice}`;
 };
 
 orderSubmitBtn.addEventListener('click', () => {
