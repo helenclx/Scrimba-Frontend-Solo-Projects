@@ -45,7 +45,7 @@ document.addEventListener('click', (e) => {
                 totalPrice += item.price;
                 console.log("Ordered items: ", orderedItems);
                 console.log("Total price: ", totalPrice);
-                renderOrderItem(item.name, item.price);
+                renderOrderItem(item.name, item.id, item.price);
             }
         });
     }
@@ -55,7 +55,7 @@ const renderOrderItem = (name, price) => {
     orderListEl.innerHTML += `
         <div class="order__item">
             <h3 class="order__food">${name}</h3>
-            <button class="order__remove-btn">Remove</button>
+            <button class="order__remove-btn" data-remove="${id}">Remove</button>
             <p class="order__price">$${price}</p>
         </div>
     `;
