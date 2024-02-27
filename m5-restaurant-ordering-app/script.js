@@ -10,3 +10,24 @@ const cardNameInput = document.getElementById('card-name-input');
 const cardNumInput = document.getElementById('card-number-input');
 const cardCvvInput = document.getElementById('card-cvv-input');
 const payBtn = document.querySelector('.modal__pay-btn');
+
+const renderMenuItem = (menu) => {
+    return menu.map(item => {
+        const { name, ingredients, id, price, emoji } = item;
+        const ingredientsTxt = ingredients.map(ingredient => ingredient.charAt(0).toUpperCase() + ingredient.slice(1).toLowerCase()).join(', ');
+
+        return `
+            <div class="menu__food">
+                <div class="menu__food--icon">${emoji}</div>
+                <div class="menu__food--info">
+                    <h2 class="menu__food--name">${name}</h2>
+                    <p class="menu__food--ingredients">${ingredientsTxt}</p>
+                    <h3 class="menu__food--price">$${price}</h3>
+                </div>
+                <button class="menu__food--add-btn" data-add="${id}">+</button>
+            </div>
+            <hr>
+        `;
+    }).join('');
+};
+menuEl.innerHTML = renderMenuItem(menuArray);
