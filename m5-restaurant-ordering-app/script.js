@@ -86,6 +86,7 @@ orderSubmitBtn.addEventListener('click', () => {
 
 const submitModalForm = () => {
     modalEl.classList.add('hidden');
+    orderEl.innerHTML = '';
 
     const orderCompleteEl = document.createElement('h2');
     orderCompleteEl.classList.add('order__complete');
