@@ -11,6 +11,9 @@ const cardNameInput = document.getElementById('card-name-input');
 const cardNumInput = document.getElementById('card-number-input');
 const cardCvvInput = document.getElementById('card-cvv-input');
 
+let orderedItems = [];
+let totalPrice = 0;
+
 const renderMenuItem = (menu) => {
     return menu.map(item => {
         const { name, ingredients, id, price, emoji } = item;
