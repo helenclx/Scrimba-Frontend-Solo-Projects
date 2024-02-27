@@ -35,14 +35,20 @@ const renderMenuItem = (menu) => {
 };
 menuEl.innerHTML = renderMenuItem(menuArray);
 
-const renderOrderedItem = (name, id, price) => {
-    orderListEl.innerHTML += `
-        <div class="order__item">
-            <h3 class="order__food">${name}</h3>
-            <button class="order__remove-btn" data-remove="${id}">Remove</button>
-            <p class="order__price">$${price}</p>
-        </div>
-    `;
+const renderOrderedItems = (items) => {
+    orderListEl.innerHTML = '';
+
+    items.forEach((item, index) => {
+        const { name, id, price } = item;
+
+        orderListEl.innerHTML += `
+            <div class="order__item">
+                <h3 class="order__food">${name}</h3>
+                <button class="order__remove-btn" data-remove="${id}">Remove</button>
+                <p class="order__price">$${price}</p>
+            </div>
+        `;
+    });
 
     totalPriceEl.textContent = `$${totalPrice}`;
 };
@@ -57,7 +63,7 @@ document.addEventListener('click', (e) => {
                 totalPrice += item.price;
                 console.log("Ordered items: ", orderedItems);
                 console.log("Total price: ", totalPrice);
-                renderOrderedItem(item.name, item.id, item.price);
+                renderOrderedItems(orderedItems);
             }
         });
     }
