@@ -6,6 +6,7 @@ const orderListEl = document.querySelector('.order__list');
 const totalPriceEl = document.querySelector('.order__total--price');
 const orderSubmitBtn = document.querySelector('.order__submit-btn');
 const modalEl = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('.modal__close--btn');
 const modalFormEl = document.querySelector('.modal__form');
 const cardNameInput = document.getElementById('card-name-input');
 const cardNumInput = document.getElementById('card-number-input');
@@ -83,6 +84,10 @@ document.addEventListener('click', (e) => {
 orderSubmitBtn.addEventListener('click', () => {
     modalEl.classList.remove('hidden');
 });
+
+modalCloseBtn.addEventListener('click', () => {
+    modalEl.classList.add('hidden');
+})
 
 const submitModalForm = () => {
     modalEl.classList.add('hidden');
