@@ -39,13 +39,11 @@ const renderOrderedItems = (items) => {
     orderListEl.innerHTML = '';
 
     items.forEach((item, index) => {
-        const { name, id, price } = item;
-
         orderListEl.innerHTML += `
             <div class="order__item">
-                <h3 class="order__food">${name}</h3>
-                <button class="order__remove-btn" data-remove="${id}">Remove</button>
-                <p class="order__price">$${price}</p>
+                <h3 class="order__food">${item.name}</h3>
+                <button class="order__remove-btn" data-remove="${index}">Remove</button>
+                <p class="order__price">$${item.price}</p>
             </div>
         `;
     });
