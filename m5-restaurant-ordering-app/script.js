@@ -4,7 +4,7 @@ const menuEl = document.querySelector('.menu');
 const orderEl = document.querySelector('.order');
 const totalPriceEl = document.querySelector('.order__total--price');
 const orderSubmitBtn = document.querySelector('.order__submit-btn');
-const modealEl = document.querySelector('.modal');
+const modalEl = document.querySelector('.modal');
 const modalFormEl = document.querySelector('.modal__form');
 const cardNameInput = document.getElementById('card-name-input');
 const cardNumInput = document.getElementById('card-number-input');
@@ -38,4 +38,8 @@ addOrderBtns.forEach((btn, index) => {
         console.log(`Button no. ${index} clicked`);
         orderEl.classList.remove('hidden');
     });
+});
+
+orderSubmitBtn.addEventListener('click', () => {
+    modalEl.classList.remove('hidden');
 });
