@@ -9,7 +9,6 @@ const modalFormEl = document.querySelector('.modal__form');
 const cardNameInput = document.getElementById('card-name-input');
 const cardNumInput = document.getElementById('card-number-input');
 const cardCvvInput = document.getElementById('card-cvv-input');
-const payBtn = document.querySelector('.modal__pay-btn');
 
 const renderMenuItem = (menu) => {
     return menu.map(item => {
@@ -52,11 +51,6 @@ const submitModalForm = () => {
     orderCompleteEl.textContent = `Thanks, ${cardNameInput.value}! Your order is on its way!`
     orderEl.append(orderCompleteEl);
 };
-
-payBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    submitModalForm();
-});
 
 modalFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
