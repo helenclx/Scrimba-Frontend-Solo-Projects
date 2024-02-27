@@ -35,7 +35,7 @@ const renderMenuItem = (menu) => {
 };
 menuEl.innerHTML = renderMenuItem(menuArray);
 
-const renderOrderItem = (name, id, price) => {
+const renderOrderedItem = (name, id, price) => {
     orderListEl.innerHTML += `
         <div class="order__item">
             <h3 class="order__food">${name}</h3>
@@ -57,7 +57,7 @@ document.addEventListener('click', (e) => {
                 totalPrice += item.price;
                 console.log("Ordered items: ", orderedItems);
                 console.log("Total price: ", totalPrice);
-                renderOrderItem(item.name, item.id, item.price);
+                renderOrderedItem(item.name, item.id, item.price);
             }
         });
     }
