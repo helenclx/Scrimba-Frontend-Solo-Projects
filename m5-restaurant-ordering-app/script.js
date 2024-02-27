@@ -61,9 +61,22 @@ document.addEventListener('click', (e) => {
                 totalPrice += item.price;
                 console.log("Ordered items: ", orderedItems);
                 console.log("Total price: ", totalPrice);
-                renderOrderedItems(orderedItems);
             }
         });
+        renderOrderedItems(orderedItems);
+    }
+
+    if (e.target.dataset.remove) {
+        e.target.parentElement.remove();
+        orderedItems.forEach((item, index) => {
+            if (index === Number(e.target.dataset.remove)) {
+                orderedItems.splice(index, 1);
+                totalPrice -= item.price;
+                console.log("Ordered items: ", orderedItems);
+                console.log("Total price: ", totalPrice);
+            }
+        });
+        renderOrderedItems(orderedItems);
     }
 });
 
