@@ -52,7 +52,14 @@ const submitModalForm = () => {
     orderEl.append(orderCompleteEl);
 };
 
+const clearSubmitModalForm = () => {
+    cardNameInput.value = '';
+    cardNumInput.value = '';
+    cardCvvInput.value = '';
+};
+
 modalFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
     submitModalForm();
+    clearSubmitModalForm();
 });
