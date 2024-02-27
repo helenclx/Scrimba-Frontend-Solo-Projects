@@ -35,21 +35,26 @@ const renderMenuItem = (menu) => {
 };
 menuEl.innerHTML = renderMenuItem(menuArray);
 
-const addOrderBtns = document.querySelectorAll('.menu__food--add-btn');
-addOrderBtns.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        console.log(`Button no. ${index} clicked`);
+document.addEventListener('click', (e) => {
+    if (e.target.dataset.add) {
         orderEl.classList.remove('hidden');
-        renderOrderItem();
-    });
+
+        menuArray.forEach(item => {
+            if (item.id === Number(e.target.dataset.add)) {
+                orderedItems.push(item);
+                console.log("Ordered items: ", orderedItems);
+                renderOrderItem(item.name, item.price);
+            }
+        });
+    }
 });
 
-const renderOrderItem = () => {
+const renderOrderItem = (name, price) => {
     orderListEl.innerHTML += `
         <div class="order__item">
-            <h3 class="order__food">Pizza</h3>
+            <h3 class="order__food">${name}</h3>
             <button class="order__remove-btn">Remove</button>
-            <p class="order__price">$14</p>
+            <p class="order__price">$${price}</p>
         </div>
     `;
 };
