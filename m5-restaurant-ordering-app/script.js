@@ -43,3 +43,22 @@ addOrderBtns.forEach((btn, index) => {
 orderSubmitBtn.addEventListener('click', () => {
     modalEl.classList.remove('hidden');
 });
+
+const submitModalForm = () => {
+    modalEl.classList.add('hidden');
+
+    const orderCompleteEl = document.createElement('h2');
+    orderCompleteEl.classList.add('order__complete');
+    orderCompleteEl.textContent = `Thanks, James! Your order is on its way!`
+    orderEl.append(orderCompleteEl);
+};
+
+payBtn.addEventListener('clixk', (e) => {
+    e.preventDefault();
+    submitModalForm();
+});
+
+modalFormEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitModalForm();
+});
