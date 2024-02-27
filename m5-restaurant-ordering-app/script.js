@@ -49,11 +49,11 @@ const submitModalForm = () => {
 
     const orderCompleteEl = document.createElement('h2');
     orderCompleteEl.classList.add('order__complete');
-    orderCompleteEl.textContent = `Thanks, James! Your order is on its way!`
+    orderCompleteEl.textContent = `Thanks, ${cardNameInput.value}! Your order is on its way!`
     orderEl.append(orderCompleteEl);
 };
 
-payBtn.addEventListener('clixk', (e) => {
+payBtn.addEventListener('click', (e) => {
     e.preventDefault();
     submitModalForm();
 });
