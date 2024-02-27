@@ -51,7 +51,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-const renderOrderItem = (name, price) => {
+const renderOrderItem = (name, id, price) => {
     orderListEl.innerHTML += `
         <div class="order__item">
             <h3 class="order__food">${name}</h3>
