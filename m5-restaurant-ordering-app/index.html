@@ -15,7 +15,53 @@
             <h1>Helen's Diner</h1>
             <p>The best burgers and pizzas in town.</p>
         </header>
-        <main></main>
+        <main>
+            <section class="menu">
+                <div class="menu__food">
+                    <div class="menu__food--icon">🍕</div>
+                    <div class="menu__food--info">
+                        <h2 class="menu__food--name">Pizza</h2>
+                        <p class="menu__food--ingredients">Pepperoni, Mushrom, Mozarella</p>
+                        <h3 class="menu__food--price">$14</h3>
+                    </div>
+                    <button class="menu__food--add-btn">+</button>
+                </div>
+                <hr>
+            </section>
+
+            <section class="order">
+                <h2 class="order__complete">Thanks, James! Your order is on its way!</h2>
+
+                <h2 class="order__title">Your order</h2>
+                <div class="order__item">
+                    <h3 class="order__food">Pizza</h3>
+                    <button class="order__remove-btn">Remove</button>
+                    <p class="order__price">$14</p>
+                </div>
+                <hr>
+                <div class="order__total">
+                    <h3 class="order__total--title">Total price:</h3>
+                    <p class="order__total--price">$26</p>
+                </div>
+                <button class="order__submit-btn">Complete order</button>
+            </section>
+
+            <div class="modal">
+                <h2 class="modal__title">Enter card details</h2>
+                <form class="modal__form">
+                    <label for="card-name-input">Enter your name:</label>
+                    <input type="text" id="card-name-input" class="modal__input" placeholder="Enter your name">
+
+                    <label for="card-number-input">Enter card number:</label>
+                    <input type="text" id="card-number-input" class="modal__input" placeholder="Enter card number">
+
+                    <label for="card-cvv-input">Enter CVV:</label>
+                    <input type="text" id="card-cvv-input" class="modal__input" placeholder="Enter CVV">
+
+                    <button class="modal__pay-btn">Pay</button>
+                </form>
+            </div>
+        </main>
         <footer class="attribution">
             Coded by <a href="https://helenclx.github.io/" target="_blank">Helen Chong</a>.
         </footer>
