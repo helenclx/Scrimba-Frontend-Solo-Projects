@@ -35,6 +35,18 @@ const renderMenuItem = (menu) => {
 };
 menuEl.innerHTML = renderMenuItem(menuArray);
 
+const renderOrderItem = (name, id, price) => {
+    orderListEl.innerHTML += `
+        <div class="order__item">
+            <h3 class="order__food">${name}</h3>
+            <button class="order__remove-btn" data-remove="${id}">Remove</button>
+            <p class="order__price">$${price}</p>
+        </div>
+    `;
+
+    totalPriceEl.textContent = `$${totalPrice}`;
+};
+
 document.addEventListener('click', (e) => {
     if (e.target.dataset.add) {
         orderEl.classList.remove('hidden');
@@ -50,18 +62,6 @@ document.addEventListener('click', (e) => {
         });
     }
 });
-
-const renderOrderItem = (name, id, price) => {
-    orderListEl.innerHTML += `
-        <div class="order__item">
-            <h3 class="order__food">${name}</h3>
-            <button class="order__remove-btn" data-remove="${id}">Remove</button>
-            <p class="order__price">$${price}</p>
-        </div>
-    `;
-
-    totalPriceEl.textContent = `$${totalPrice}`;
-};
 
 orderSubmitBtn.addEventListener('click', () => {
     modalEl.classList.remove('hidden');
