@@ -2,6 +2,9 @@
 /* Custom Properties   */
 /* ------------------- */
 :root {
+    --clr-white: white;
+    --clr-btn-bg: #16DB99;
+
     --ff-regular: 'Merriweather';
     --ff-button: 'Roboto';
 }
@@ -94,6 +97,14 @@ body {
 
 button {
     font-family: var(--ff-button), Arial, Helvetica, sans-serif;
+}
+
+.order__submit-btn,
+.modal__pay-btn {
+    background-color: var(--clr-btn-bg);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 0.1rem;
 }
 
 /* Utility classes */
