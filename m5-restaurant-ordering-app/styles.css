@@ -1,7 +1,10 @@
 /* ------------------- */
 /* Custom Properties   */
 /* ------------------- */
-:root
+:root {
+    --ff-regular: 'Merriweather';
+    --ff-button: 'Roboto';
+}
 
 /* ------------------- */
 /* CSS Reset           */
@@ -83,6 +86,15 @@ textarea:not([rows]) {
 /* ------------------- */
 /* STYLING BEGINS      */
 /* ------------------- */
+
+/* General styles */
+body {
+    font-family: var(--ff-regular), 'Times New Roman', Times, serif;
+}
+
+button {
+    font-family: var(--ff-button), Arial, Helvetica, sans-serif;
+}
 
 /* Utility classes */
 .sr-only {
