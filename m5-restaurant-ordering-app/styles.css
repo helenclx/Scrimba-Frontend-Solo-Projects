@@ -3,6 +3,7 @@
 /* ------------------- */
 :root {
     --clr-white: white;
+    --clr-add-btn-border: #3C3C3C;
     --clr-btn-bg: #6D28D9;
     --clr-box-shadow: rgb(86, 86, 86);
     --clr-input-border: #757575;
@@ -97,8 +98,16 @@ body {
     font-family: var(--ff-regular), 'Times New Roman', Times, serif;
 }
 
+main {
+    padding: 1.5rem;
+}
+
 button {
     font-family: var(--ff-interactive), Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 /* Header section */
@@ -117,6 +126,33 @@ button {
 
 .diner__name {
     margin-bottom: 0.2rem;
+}
+
+/* Menu section */
+.menu__food {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.menu__food--icon {
+    font-size: 3rem;
+}
+
+.menu__food--info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu__food--add-btn {
+    margin-left: auto;
+    background-color: transparent;
+    border: 0.07rem solid var(--clr-add-btn-border);
+    width: 2.5rem;
+    height: 2.5rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50rem;
 }
 
 /* Order List section */
@@ -161,10 +197,6 @@ button {
     border: none;
     background-color: transparent;
     font-size: 1.2rem;
-}
-
-.modal__close--btn:hover {
-    cursor: pointer;
 }
 
 .modal__title {
