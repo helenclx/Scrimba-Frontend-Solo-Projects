@@ -164,9 +164,17 @@ button:hover {
 }
 
 /* Order List section */
-.order__title {
+.order__title,
+.order__complete {
     text-align: center;
+}
+
+.order__title {
     margin: 2rem 0;
+}
+
+.order__complete {
+    line-height: 1.5;
 }
 
 .order__item,
