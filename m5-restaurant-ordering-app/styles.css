@@ -4,9 +4,11 @@
 :root {
     --clr-white: white;
     --clr-btn-bg: #6D28D9;
+    --clr-box-shadow: rgb(86, 86, 86);
+    --clr-input-border: #757575;
 
     --ff-regular: 'Merriweather';
-    --ff-button: 'Roboto';
+    --ff-interactive: 'Roboto';
 }
 
 /* ------------------- */
@@ -96,7 +98,7 @@ body {
 }
 
 button {
-    font-family: var(--ff-button), Arial, Helvetica, sans-serif;
+    font-family: var(--ff-interactive), Arial, Helvetica, sans-serif;
 }
 
 .order__submit-btn,
@@ -105,6 +107,73 @@ button {
     color: var(--clr-white);
     border: none;
     border-radius: 0.1rem;
+    width: 100%;
+    font-weight: 700;
+}
+
+.order__submit-btn:focus,
+.modal__pay-btn:focus {
+    outline: 0.25rem solid var(--clr-btn-bg);
+    outline-offset: 0.1rem;
+}
+
+/* Modal */
+.modal {
+    font-family: var(--ff-interactive), Arial, Helvetica, sans-serif;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    width: 90%;
+    max-height: 60%;
+    background-color: var(--clr-white);
+    padding: 1rem;
+    box-shadow: 0rem 0rem 4rem var(--clr-box-shadow);
+}
+
+.modal__close--btn {
+    display: block;
+    top: 0;
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+.modal__close--btn:hover {
+    cursor: pointer;
+}
+
+.modal__title {
+    text-align: center;
+    margin: 1rem 0 1.5rem;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.modal__input {
+    width: 100%;
+    border: 0.1rem solid var(--clr-input-border);
+}
+
+.modal__input,
+.modal__pay-btn {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.modal__pay-btn {
+    margin-top: 0.5rem;
 }
 
 /* Utility classes */
