@@ -216,7 +216,7 @@ button:hover {
     background-color: var(--clr-btn-bg);
     color: var(--clr-white);
     border: none;
-    border-radius: 0.1rem;
+    border-radius: 0.15rem;
     width: 100%;
     font-weight: 700;
 }
@@ -238,10 +238,11 @@ button:hover {
     bottom: 0;
     margin: auto;
     z-index: 2;
-    width: 90%;
+    max-width: 90%;
     max-height: 60%;
     background-color: var(--clr-white);
     padding: 1rem;
+    border-radius: 0.3rem;
     box-shadow: 0rem 0rem 4rem var(--clr-box-shadow);
 }
 
@@ -308,4 +309,42 @@ button:hover {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* Screen sizes larger than mobile */
+@media only screen and (min-width: 30rem) {
+    .modal {
+        padding: 2rem;
+        max-width: 35rem;
+    }
+}
+
+/* Tablet screen size */
+@media only screen and (min-width: 43.75rem) {
+    main {
+        padding: 2rem 3rem;
+    }
+
+    .diner__header {
+        padding: 3rem;
+    }
+
+    .modal {
+        max-height: 27rem;
+    }
+}
+
+/* Desktop screen size */
+@media only screen and (min-width: 60rem) {
+    main {
+        padding: 3rem 5rem;
+    }
+
+    .diner__header {
+        padding: 3rem 5rem;
+    }
+
+    .modal {
+        max-width: 35rem;
+    }
 }
