@@ -49,3 +49,12 @@ My solo projects for Scrimba's Frontend Developer Career Path: https://scrimba.c
 
 - [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m4-oldagram/)
 - [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m4-oldagram)
+
+## Module 5 - Essential JavaScript Concepts
+
+### Restaurant ordering app
+
+![](m5-restaurant-ordering-app/screenshot.png)
+
+- [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m5-restaurant-ordering-app/)
+- [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m5-restaurant-ordering-app)
