@@ -101,6 +101,25 @@ button {
     font-family: var(--ff-interactive), Arial, Helvetica, sans-serif;
 }
 
+/* Header section */
+.diner__header {
+    background-image: url(./images/restaurant-header.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    color: var(--clr-white);
+}
+
+.diner__name,
+.diner__tagline {
+    text-shadow: 0rem 0rem 0.2rem black;
+}
+
+.diner__name {
+    margin-bottom: 0.2rem;
+}
+
+/* Order List section */
 .order__submit-btn,
 .modal__pay-btn {
     background-color: var(--clr-btn-bg);
