@@ -30,7 +30,7 @@ const renderMenuItem = (menu) => {
                 </div>
                 <button class="menu__food--add-btn" data-add="${id}">+</button>
             </div>
-            <hr>
+            <hr class="menu__line">
         `;
     }).join('');
 };

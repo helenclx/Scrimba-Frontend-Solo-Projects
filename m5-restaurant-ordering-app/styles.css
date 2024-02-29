@@ -4,6 +4,9 @@
 :root {
     --clr-white: white;
     --clr-add-btn-border: #3C3C3C;
+    --clr-menu-line: #8B8B8B;
+    --clr-remove: #ff5858;
+    --clr-order-line: #000;
     --clr-btn-bg: #6D28D9;
     --clr-box-shadow: rgb(86, 86, 86);
     --clr-input-border: #757575;
@@ -155,7 +158,51 @@ button:hover {
     border-radius: 50rem;
 }
 
+.menu__line {
+    border: 0.05rem solid var(--clr-menu-line);
+    margin: 2rem 0;
+}
+
 /* Order List section */
+.order__title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.order__item,
+.order__total {
+    display: flex;
+    align-items: center;
+}
+
+.order__item {
+    margin-bottom: 0.5rem;
+}
+
+.order__remove-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--clr-remove);
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+    margin-top: 0.1rem;
+}
+
+.order__price,
+.order__total--price {
+    margin-left: auto;
+}
+
+.order__line {
+    border: 0.09rem solid var(--clr-order-line);
+    margin: 1rem 0;
+}
+
+.order__submit-btn {
+    margin-top: 2rem;
+    padding: 0.7rem;
+}
+
 .order__submit-btn,
 .modal__pay-btn {
     background-color: var(--clr-btn-bg);
@@ -248,7 +295,7 @@ button:hover {
 .attribution {
     font-size: 0.6875rem; /* 11px */
     text-align: center;
-    padding-top: 0.5rem;
+    padding: 0.5rem;
 }
 
 .attribution a {
