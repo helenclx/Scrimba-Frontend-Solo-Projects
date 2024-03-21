@@ -7,6 +7,8 @@
     --clr-white: #ffffff;
     --clr-journal-title: #0E0E0E;
     --clr-nav-link: #090909;
+    --clr-hero-bg: #6b6b6b;
+    --clr-text-shadow: #000;
     --clr-blog-title: #141414;
     --clr-blog-summary: #505050;
     --clr-footer-bg: #202020;
@@ -98,6 +100,36 @@ textarea:not([rows]) {
 /* General styles */
 body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
+}
+
+/* Hero section */
+.hero {
+    min-height: 23rem;
+    background-color: var(--clr-hero-bg);
+    background-image: url(../images/hero-image.png);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: var(--clr-white);
+    padding: 1.5em;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / auto;
+    gap: 1em;
+}
+
+.hero__title,
+.hero__desc {
+    align-self: end;
+    text-shadow: 0 0 0.1em var(--clr-text-shadow), 0 0 0.1em var(--clr-text-shadow);
+}
+
+.hero__title {
+    grid-row: 4;
+}
+
+.hero__desc {
+    grid-row: 5;
 }
 
 /* Posts container */
