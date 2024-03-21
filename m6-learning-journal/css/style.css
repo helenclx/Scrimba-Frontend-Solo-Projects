@@ -104,22 +104,28 @@ body {
 
 /* Navigation bar section */
 .navbar,
-.navbar__links {
-    padding: 0.5em 1em;
-    display: grid;
-    gap: 1em;
+.navbar__title {
+    display: flex;
 }
 
 .navbar {
-    grid-template: auto / auto auto 1fr auto;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    grid-template-columns: auto auto 1fr auto;
+}
+
+.navbar__title {
+    gap: 1em;
 }
 
 .navbar__links {
-    grid-template: auto / 1fr 1fr;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
 }
 
 .navbar__logo,
-.navbar__title {
+.navbar__name {
     justify-self: start;
     align-self: center;
 }
