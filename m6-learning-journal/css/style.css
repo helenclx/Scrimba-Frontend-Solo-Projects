@@ -102,6 +102,17 @@ body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+main,
+.hero {
+    padding: 1.5em;
+}
+
 /* Navigation bar section */
 .navbar,
 .navbar__title {
@@ -166,11 +177,6 @@ body {
     gap: 1em;
 }
 
-.hero,
-.posts {
-    padding: 1.5em;
-}
-
 .hero__title,
 .hero__desc {
     align-self: end;
@@ -183,6 +189,12 @@ body {
 
 .hero__desc {
     grid-row: 5;
+}
+
+/* Recent posts */
+.recent__heading {
+    font-size: 1.7rem;
+    text-align: center;
 }
 
 /* Posts container */
@@ -223,7 +235,6 @@ body {
 .view-btn {
     display: block;
     margin: 0 auto;
-    margin-bottom: 1.5em;
     border: none;
     text-decoration: underline;
     font-weight: 700;
