@@ -120,7 +120,7 @@ body {
 .navbar__links {
     display: grid;
     gap: 1em;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
 }
 
 .navbar__logo,
