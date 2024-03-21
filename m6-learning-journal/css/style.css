@@ -204,7 +204,7 @@ main,
 }
 
 .posts {
-    gap: 2.5em;
+    gap: 2em;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
