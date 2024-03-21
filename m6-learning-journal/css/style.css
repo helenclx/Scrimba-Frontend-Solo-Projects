@@ -103,11 +103,19 @@ body {
 }
 
 /* Navigation bar section */
-.navbar {
+.navbar,
+.navbar__links {
     padding: 0.5em 1em;
     display: grid;
-    grid-template: auto / auto auto 1fr auto;
     gap: 1em;
+}
+
+.navbar {
+    grid-template: auto / auto auto 1fr auto;
+}
+
+.navbar__links {
+    grid-template: auto / 1fr 1fr;
 }
 
 .navbar__logo,
@@ -125,14 +133,13 @@ body {
     justify-self: end;
     list-style: none;
     padding: 0;
-    display: flex;
-    gap: 1em;
     text-align: center;
 }
 
 .navbar__links li {
     font-weight: 700;
     text-transform: uppercase;
+    align-self: center;
 }
 
 /* Hero section */
