@@ -177,6 +177,7 @@ body {
     text-align: center;
     background-color: var(--clr-footer-bg);
     color: var(--clr-white);
+    padding: 2em 1em;
 }
 
 .footer a {
