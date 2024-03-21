@@ -1,7 +1,9 @@
 /* ------------------- */
 /* Custom Properties   */
 /* ------------------- */
-:root
+:root {
+    --ff-default: 'Source Sans 3';
+}
 
 /* ------------------- */
 /* CSS Reset           */
@@ -83,6 +85,11 @@ textarea:not([rows]) {
 /* ------------------- */
 /* STYLING BEGINS      */
 /* ------------------- */
+
+/* General styles */
+body {
+    font-family: var(--ff-default), Arial, Helvetica, sans-serif;
+}
 
 /* Attribution */
 .attribution {
