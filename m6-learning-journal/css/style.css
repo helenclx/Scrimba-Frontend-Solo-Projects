@@ -111,7 +111,6 @@ body {
 .navbar {
     justify-content: space-between;
     padding: 0.5em 1em;
-    grid-template-columns: auto auto 1fr auto;
 }
 
 .navbar__title {
