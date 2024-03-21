@@ -282,6 +282,10 @@ main,
         padding: 3em;
     }
 
+    .hero {
+        background-position: 25% 80%;
+    }
+
     .navbar {
         padding: 1.5em 3em;
     }
