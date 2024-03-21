@@ -102,6 +102,39 @@ body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
 }
 
+/* Navigation bar section */
+.navbar {
+    padding: 0.5em 1em;
+    display: grid;
+    grid-template: auto / auto auto 1fr auto;
+    gap: 1em;
+}
+
+.navbar__logo,
+.navbar__title {
+    justify-self: start;
+    align-self: center;
+}
+
+.navbar__logo {
+    width: 2.5rem;
+    object-fit: contain;
+}
+
+.navbar__links {
+    justify-self: end;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    text-align: center;
+}
+
+.navbar__links li {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 /* Hero section */
 .hero {
     min-height: 23rem;
