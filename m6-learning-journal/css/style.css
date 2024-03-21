@@ -147,6 +147,10 @@ body {
     align-self: center;
 }
 
+.navbar__links a {
+    text-decoration: none;
+}
+
 /* Hero section */
 .hero {
     min-height: 23rem;
