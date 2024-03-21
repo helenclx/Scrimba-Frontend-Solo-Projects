@@ -3,6 +3,15 @@
 /* ------------------- */
 :root {
     --ff-default: 'Source Sans 3';
+
+    --clr-white: #ffffff;
+    --clr-journal-title: #0E0E0E;
+    --clr-nav-link: #090909;
+    --clr-blog-title: #141414;
+    --clr-blog-summary: #505050;
+    --clr-footer-bg: #202020;
+    --clr-footer-link: #C4B5FD;
+    --clr-footer-copyright: #D7D7D7;
 }
 
 /* ------------------- */
@@ -101,8 +110,18 @@ body {
 /* Attribution */
 .footer {
     text-align: center;
+    background-color: var(--clr-footer-bg);
+    color: var(--clr-white);
 }
 
 .footer a {
-    color: hsl(228, 45%, 44%);
+    color: var(--clr-footer-link);
+}
+
+.footer__title {
+    font-weight: 700;
+}
+
+.footer__copyright {
+    color: var(--clr-footer-copyright);
 }
