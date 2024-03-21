@@ -58,3 +58,12 @@ My solo projects for Scrimba's Frontend Developer Career Path: https://scrimba.c
 
 - [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m5-restaurant-ordering-app/)
 - [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m5-restaurant-ordering-app)
+
+## Module 6 - Responsive Design
+
+### Learning Journal
+
+![](m6-learning-journal/screenshot.png)
+
+- [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m6-learning-journal/)
+- [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m6-learning-journal)
