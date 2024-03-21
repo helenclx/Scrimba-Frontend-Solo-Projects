@@ -221,10 +221,11 @@ main,
 
 .post__date {
     color: var(--clr-blog-title);
+    text-transform: uppercase;
 }
 
-.post__date {
-    text-transform: uppercase;
+.post__title {
+    font-size: 1.5rem;
 }
 
 .post__summary {
