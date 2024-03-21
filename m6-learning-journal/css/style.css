@@ -196,7 +196,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
-
 /* Post */
 .post {
     gap: 0.5em;
@@ -218,6 +217,18 @@ body {
 
 .post__summary {
     color: var(--clr-blog-summary);
+}
+
+/* Read More button */
+.view-btn {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    border: none;
+    text-decoration: underline;
+    font-weight: 700;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 /* Attribution */
