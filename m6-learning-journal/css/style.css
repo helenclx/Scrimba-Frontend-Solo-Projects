@@ -162,8 +162,8 @@ button:hover {
     width: 80%;
     padding: 1.5em;
     box-shadow: 0 0 1em var(--clr-shadow);
-    /* transform: translateX(120%);
-    transition: transform 0.5s ease-in; */
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in;
 }
 
 .navbar__item {
@@ -180,6 +180,10 @@ button:hover {
     border: none;
     background-color: transparent;
     font-size: 2rem;
+}
+
+.navbar-list-show {
+    transform: translateX(0);
 }
 
 /* Hero section */
@@ -291,6 +295,10 @@ button:hover {
 
     .navbar {
         padding: 1em 2em;
+    }
+
+    .navbar__toggle {
+        display: none;
     }
 
     .navbar__list {
