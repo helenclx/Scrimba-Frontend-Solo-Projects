@@ -230,7 +230,7 @@ button:hover {
 
 .posts {
     gap: 2em;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(15rem, 100%/4)), 1fr));
 }
 
 /* Post */
