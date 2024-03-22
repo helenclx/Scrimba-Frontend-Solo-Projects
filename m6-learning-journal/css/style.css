@@ -152,13 +152,13 @@ main,
     text-align: center;
 }
 
-.navbar__list li {
+.navbar__item {
     font-weight: 700;
     text-transform: uppercase;
     align-self: center;
 }
 
-.navbar__list a {
+.navbar__link {
     text-decoration: none;
 }
 
