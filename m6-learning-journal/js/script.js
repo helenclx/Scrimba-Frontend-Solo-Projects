@@ -14,24 +14,16 @@ navbarLinks.forEach((link) => {
     });
 });
 
-const getPostsHTML = () => {
-    let postsHTML = '';
-
-    posts.forEach((post) => {
-        postsHTML += `
+const renderPosts = (posts) => {
+    posts.forEach(({mainImg, date, title, summary}) => {
+        document.querySelector('.posts').innerHTML += `
             <article class="post">
-                <img src="${post.mainImg}" class="post__main-img" alt="Main image of ${post.title}">
-                <p class="post__date">${post.date}</p>
-                <h3 class="post__title">${post.title}</h3>
-                <p class="post__summary">${post.summary}</p>
+                <img src="${mainImg}" class="post__main-img" alt="Main image of ${title}">
+                <p class="post__date">${date}</p>
+                <h3 class="post__title">${title}</h3>
+                <p class="post__summary">${summary}</p>
             </article>
         `;
     });
-
-    return postsHTML;
 };
-
-const renderPosts = () => {
-    document.querySelector('.posts').innerHTML = getPostsHTML();
-};
-renderPosts();
+renderPosts(posts);
