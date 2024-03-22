@@ -32,6 +32,6 @@ const getPostsHTML = () => {
 };
 
 const renderPosts = () => {
-    console.log(getPostsHTML());
+    document.querySelector('.posts').innerHTML = getPostsHTML();
 };
 renderPosts();
