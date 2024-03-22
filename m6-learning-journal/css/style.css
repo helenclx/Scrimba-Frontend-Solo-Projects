@@ -144,13 +144,11 @@ button:hover {
 }
 
 .navbar__list {
-    display: grid;
-    gap: 1em;
-    grid-template-columns: auto auto;
-    justify-self: end;
     list-style: none;
     padding: 0;
     text-align: center;
+    display: flex;
+    gap: 1em;
 }
 
 .navbar__item {
@@ -163,7 +161,7 @@ button:hover {
     text-decoration: none;
 }
 
-.navbar__toggle{
+.navbar__toggle {
     border: none;
     background-color: transparent;
     font-size: 2rem;
