@@ -128,7 +128,7 @@ main,
     gap: 1em;
 }
 
-.navbar__links {
+.navbar__list {
     display: grid;
     gap: 1em;
     grid-template-columns: auto auto;
@@ -145,20 +145,20 @@ main,
     object-fit: contain;
 }
 
-.navbar__links {
+.navbar__list {
     justify-self: end;
     list-style: none;
     padding: 0;
     text-align: center;
 }
 
-.navbar__links li {
+.navbar__list li {
     font-weight: 700;
     text-transform: uppercase;
     align-self: center;
 }
 
-.navbar__links a {
+.navbar__list a {
     text-decoration: none;
 }
 
