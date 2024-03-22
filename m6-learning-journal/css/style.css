@@ -8,7 +8,7 @@
     --clr-journal-title: #0E0E0E;
     --clr-nav-link: #090909;
     --clr-hero-bg: #6b6b6b;
-    --clr-text-shadow: #000;
+    --clr-shadow: #000;
     --clr-blog-title: #141414;
     --clr-blog-summary: #505050;
     --clr-footer-bg: #202020;
@@ -126,6 +126,11 @@ button:hover {
 .navbar {
     justify-content: space-between;
     padding: 0.5em 1em;
+    background-color: var(--clr-white);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .navbar__title {
@@ -145,10 +150,20 @@ button:hover {
 
 .navbar__list {
     list-style: none;
-    padding: 0;
     text-align: center;
+
+    position: fixed;
+    background-color: var(--clr-white);
     display: flex;
-    gap: 1em;
+    flex-direction: column;
+    gap: 1.5em;
+    top: 5rem;
+    left: 10%;
+    width: 80%;
+    padding: 1.5em;
+    box-shadow: 0 0 1em var(--clr-shadow);
+    /* transform: translateX(120%);
+    transition: transform 0.5s ease-in; */
 }
 
 .navbar__item {
@@ -185,7 +200,7 @@ button:hover {
 .hero__title,
 .hero__desc {
     align-self: end;
-    text-shadow: 0 0 0.1em var(--clr-text-shadow), 0 0 0.1em var(--clr-text-shadow);
+    text-shadow: 0 0 0.1em var(--clr-shadow), 0 0 0.1em var(--clr-shadow);
 }
 
 .hero__title {
@@ -276,6 +291,19 @@ button:hover {
 
     .navbar {
         padding: 1em 2em;
+    }
+
+    .navbar__list {
+        flex-direction: row;
+        position: static;
+        background-color: inherit;
+        top: 0;
+        left: 0;
+        padding: 0;
+        width: auto;
+        transform: none;
+        transition: none;
+        box-shadow: none;
     }
 }
 
