@@ -14,6 +14,7 @@ navbarLinks.forEach((link) => {
     });
 });
 
+const viewMoreBtn = document.querySelector('.view-btn');
 let startingPostIndex = 0;
 let endingPostIndex = 3;
 
@@ -30,3 +31,18 @@ const renderPosts = (posts) => {
     });
 };
 renderPosts(posts.slice(startingPostIndex, endingPostIndex));
+
+const displayMorePosts = () => {
+    startingPostIndex += 3;
+    endingPostIndex += 3;
+
+    renderPosts(posts.slice(startingPostIndex, endingPostIndex));
+
+    if (posts.length <= endingPostIndex) {
+        viewMoreBtn.disabled = true;
+        viewMoreBtn.style.cursor = 'not-allowed';
+        viewMoreBtn.textContent = 'No more posts to load';
+    }
+};
+
+viewMoreBtn.addEventListener('click', displayMorePosts);
