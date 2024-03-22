@@ -113,6 +113,10 @@ main,
     padding: 1.5em;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* Navigation bar section */
 .navbar,
 .navbar__title {
@@ -128,12 +132,6 @@ main,
     gap: 1em;
 }
 
-.navbar__list {
-    display: grid;
-    gap: 1em;
-    grid-template-columns: auto auto;
-}
-
 .navbar__logo,
 .navbar__name {
     justify-self: start;
@@ -146,6 +144,9 @@ main,
 }
 
 .navbar__list {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: auto auto;
     justify-self: end;
     list-style: none;
     padding: 0;
@@ -160,6 +161,12 @@ main,
 
 .navbar__link {
     text-decoration: none;
+}
+
+.navbar__toggle{
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
 }
 
 /* Hero section */
@@ -240,7 +247,6 @@ main,
     text-decoration: underline;
     font-weight: 700;
     background-color: transparent;
-    cursor: pointer;
 }
 
 /* Attribution */
