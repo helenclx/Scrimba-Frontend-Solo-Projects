@@ -8,7 +8,7 @@
     --clr-journal-title: #0E0E0E;
     --clr-nav-link: #090909;
     --clr-hero-bg: #6b6b6b;
-    --clr-shadow: #000;
+    --clr-shadow: #151515;
     --clr-blog-title: #141414;
     --clr-blog-summary: #505050;
     --clr-footer-bg: #202020;
@@ -131,6 +131,7 @@ button:hover {
     top: 0;
     left: 0;
     z-index: 1;
+    box-shadow: 0 0 1em var(--clr-shadow);
 }
 
 .navbar__title {
