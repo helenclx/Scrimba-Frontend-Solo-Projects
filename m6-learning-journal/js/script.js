@@ -14,6 +14,9 @@ navbarLinks.forEach((link) => {
     });
 });
 
+let startingPostIndex = 0;
+let endingPostIndex = 3;
+
 const renderPosts = (posts) => {
     posts.forEach(({mainImg, date, title, summary}) => {
         document.querySelector('.posts').innerHTML += `
@@ -26,4 +29,4 @@ const renderPosts = (posts) => {
         `;
     });
 };
-renderPosts(posts);
+renderPosts(posts.slice(startingPostIndex, endingPostIndex));
