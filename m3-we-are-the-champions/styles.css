@@ -126,7 +126,7 @@ h1, h2 {
 
 /* Main container */
 .main {
-    max-width: 90%;
+    width: 90%;
 }
 
 .main__img {
@@ -205,8 +205,8 @@ h1, h2 {
 }
 
 .endorsements__list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(15rem, 100%/4)), 1fr));
     gap: 0.7rem;
 }
 
@@ -258,21 +258,8 @@ h1, h2 {
     color: var(--clr-btn-bg);
 }
 
-/* Tablet screen size */
-@media only screen and (min-width: 43.75rem) {
-    .endorsements__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* Desktop screen size */
-@media only screen and (min-width: 60rem) {
+@media only screen and (min-width: 50rem) {
     .main {
         max-width: 50rem;
-    }
-
-    .endorsements__list {
-        grid-template-columns: 1fr 1fr 1fr;
     }
 }
