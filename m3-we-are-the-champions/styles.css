@@ -111,19 +111,6 @@ h1, h2 {
     font-family: var(--ff-title), Arial, Helvetica, sans-serif;
 }
 
-/* Utility classes */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-}
-
 /* Main container */
 .main {
     width: 90%;
@@ -258,6 +245,20 @@ h1, h2 {
     color: var(--clr-btn-bg);
 }
 
+/* Utility classes */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Media query for screen sizes */
 @media only screen and (min-width: 50rem) {
     .main {
         max-width: 50rem;
