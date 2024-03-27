@@ -1,0 +1,1 @@
+// API documentation: https://www.thecolorapi.com/docs#schemes
