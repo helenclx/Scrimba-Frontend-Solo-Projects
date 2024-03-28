@@ -3,6 +3,8 @@
 /* ------------------- */
 :root {
     --ff-default: 'Inter';
+
+    --ht-result-color: 8rem;
 }
 
 /* ------------------- */
@@ -91,6 +93,32 @@ body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
 }
 
+/* Results Section */
+.results,
+.result,
+.result__color {
+    width: 100%;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 15rem;
+}
+
+.result {
+    height: 100%;
+}
+
+.result__color {
+    min-height: var(--ht-result-color);
+}
+
+.result__value {
+    text-align: center;
+}
+
 /* Attribution */
 .attribution {
     font-size: 0.6875rem; /* 11px */
@@ -101,3 +129,20 @@ body {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+/* Screen sizes larger than mobile */
+@media only screen and (min-width: 30rem) {
+    .results {
+        flex-direction: row;
+    }
+
+    .result__color {
+        min-height: calc(var(--ht-result-color) * 2);
+    }
+}
+
+/* Tablet screen size */
+@media only screen and (min-width: 43.75rem) {}
+
+/* Desktop screen size */
+@media only screen and (min-width: 60rem) {}
