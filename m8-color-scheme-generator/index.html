@@ -14,7 +14,22 @@
     <title>Color Scheme Generator</title>
 </head>
 <body>
-    <main></main>
+    <main>
+        <form class="form">
+            <input type="color" class="form__seed-color" aria-label="Select a color">
+            <select name="color-scheme-select" id="color-scheme-modes" class="form__color-scheme">
+                <option value="monochrome">Monochrome</option>
+                <option value="monochrome-dark">Monochrome-dark</option>
+                <option value="monochrome-light">Monochrome-light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-complement</option>
+                <option value="triad">Triad</option>
+            </select>
+            <button class="form__btn">Get color scheme</button>
+        </form>
+        <section class="results"></section>
+    </main>
     <footer class="attribution">
         Coded by <a href="https://helenclx.github.io/" target="_blank">Helen Chong</a>.
     </footer>
