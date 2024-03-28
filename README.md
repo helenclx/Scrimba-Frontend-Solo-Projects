@@ -67,3 +67,12 @@ My solo projects for Scrimba's Frontend Developer Career Path: https://scrimba.c
 
 - [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m6-learning-journal/)
 - [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m6-learning-journal)
+
+## Module 8 - Working with APIs
+
+### Color Scheme Generator
+
+![](m8-color-scheme-generator/screenshot.png)
+
+- [Live site](https://helenclx.github.io/Scrimba-Frontend-Solo-Projects/m8-color-scheme-generator/)
+- [Source code](https://github.com/helenclx/Scrimba-Frontend-Solo-Projects/tree/main/m8-color-scheme-generator)
