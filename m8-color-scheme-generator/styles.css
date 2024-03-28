@@ -1,7 +1,9 @@
 /* ------------------- */
 /* Custom Properties   */
 /* ------------------- */
-:root
+:root {
+    --ff-default: 'Inter';
+}
 
 /* ------------------- */
 /* CSS Reset           */
@@ -83,6 +85,11 @@ textarea:not([rows]) {
 /* ------------------- */
 /* STYLING BEGINS      */
 /* ------------------- */
+
+/* General Styles */
+body {
+    font-family: var(--ff-default), Arial, Helvetica, sans-serif;
+}
 
 /* Attribution */
 .attribution {
