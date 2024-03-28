@@ -4,6 +4,7 @@
 :root {
     --ff-default: 'Inter';
 
+    --clr-txt-default: #121212;
     --clr-result-focus: #000;
 
     --ht-result-color: 8rem;
@@ -103,6 +104,7 @@ main,
 /* General Styles */
 body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
+    color: var(--clr-txt-default);
     padding: 1em 0;
     gap: 1em;
 }
