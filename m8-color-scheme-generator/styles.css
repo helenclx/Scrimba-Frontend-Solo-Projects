@@ -93,6 +93,15 @@ body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
 }
 
+/* Flex Containers */
+body,
+.results {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Results Section */
 .results,
 .result,
@@ -101,9 +110,6 @@ body {
 }
 
 .results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     min-height: 15rem;
     gap: 1em;
 }
@@ -148,6 +154,10 @@ body {
 
 /* Screen sizes larger than mobile */
 @media only screen and (min-width: 30rem) {
+    main {
+        width: 90%;
+    }
+
     .results {
         flex-direction: row;
         gap: 0em;
