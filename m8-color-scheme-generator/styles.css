@@ -122,6 +122,7 @@ main {
 
 .form * {
     cursor: pointer;
+    height: 2.5rem;
 }
 
 .form__seed-color {
