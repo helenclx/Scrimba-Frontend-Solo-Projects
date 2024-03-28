@@ -26,9 +26,13 @@ formEl.addEventListener('submit', (event) => {
                 newResultColor.classList.add('result__color');
                 newResultColor.style.backgroundColor = colorHexValue;
 
-                const newResultValue = document.createElement('p');
+                const newResultValue = document.createElement('button');
                 newResultValue.classList.add('result__value');
                 newResultValue.textContent = colorHexValue;
+                newResultValue.addEventListener("click", () => {
+                    navigator.clipboard.writeText(newResultValue.textContent);
+                    alert("Color hex value copied to clipboard");
+                });
 
                 resultsContainer.append(newResult);
                 newResult.append(newResultColor);
