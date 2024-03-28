@@ -4,6 +4,8 @@
 :root {
     --ff-default: 'Inter';
 
+    --clr-result-focus: #000;
+
     --ht-result-color: 8rem;
 }
 
@@ -118,12 +120,20 @@ body,
     height: 100%;
 }
 
+.result__color,
+.result__value {
+    cursor: pointer;
+}
+
 .result__color {
     min-height: var(--ht-result-color);
 }
 
+.result__color:focus {
+    border: 0.2em solid var(--clr-result-focus);
+}
+
 .result__value {
-    cursor: pointer;
     display: block;
     margin: 0 auto;
 }

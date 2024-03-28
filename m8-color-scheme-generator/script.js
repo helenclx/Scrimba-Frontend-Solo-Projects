@@ -25,13 +25,17 @@ formEl.addEventListener('submit', (event) => {
                 const newResultColor = document.createElement('div');
                 newResultColor.classList.add('result__color');
                 newResultColor.style.backgroundColor = colorHexValue;
+                newResultColor.tabIndex = '0';
+                newResultColor.ariaLabel = `Color with the hex value of ${colorHexValue}`;
+                newResultColor.addEventListener('click', () => {
+                    copyColorValue(colorHexValue);
+                })
 
                 const newResultValue = document.createElement('button');
                 newResultValue.classList.add('result__value');
                 newResultValue.textContent = colorHexValue;
                 newResultValue.addEventListener("click", () => {
-                    navigator.clipboard.writeText(newResultValue.textContent);
-                    alert("Color hex value copied to clipboard");
+                    copyColorValue(colorHexValue);
                 });
 
                 resultsContainer.append(newResult);
@@ -39,4 +43,9 @@ formEl.addEventListener('submit', (event) => {
                 newResult.append(newResultValue);
             })
         })
-})
+});
+
+const copyColorValue = (value) => {
+    navigator.clipboard.writeText(value);
+    alert(`Color hex value ${value} copied to clipboard`);
+};
