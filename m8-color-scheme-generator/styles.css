@@ -95,6 +95,10 @@ body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
 }
 
+main {
+    min-width: 20rem;
+}
+
 /* Flex Containers */
 body,
 .results {
@@ -102,6 +106,35 @@ body,
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Form Container */
+.form {
+    width: 100%;
+    display: grid;
+    gap: 0.7em;
+    grid-template-areas:
+        'seed mode mode'
+        'btn btn btn';
+}
+
+.form * {
+    cursor: pointer;
+}
+
+.form__seed-color {
+    grid-area: seed;
+    min-width: 4rem;
+    width: auto;
+}
+
+.form__color-scheme {
+    grid-area: mode;
+    width: auto;
+}
+
+.form__btn {
+    grid-area: btn;
 }
 
 /* Results Section */
@@ -166,6 +199,10 @@ body,
 @media only screen and (min-width: 30rem) {
     main {
         width: 90%;
+    }
+
+    .form {
+        grid-template-areas: 'seed mode mode mode btn btn btn';
     }
 
     .results {
