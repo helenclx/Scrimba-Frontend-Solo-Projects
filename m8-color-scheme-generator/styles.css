@@ -103,6 +103,8 @@ main,
 /* General Styles */
 body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
+    padding: 1em 0;
+    gap: 1em;
 }
 
 main {
