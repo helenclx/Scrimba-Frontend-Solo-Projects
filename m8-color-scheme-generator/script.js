@@ -9,4 +9,10 @@ formEl.addEventListener('submit', (event) => {
     console.log('Form submitted');
     console.log('Seed Color:', seedColorEl.value);
     console.log('Color Scheme:', colorScemeEl.value);
+
+    fetch(`https://www.thecolorapi.com/scheme?hex=${seedColorEl.value.slice(1)}&mode=${colorScemeEl.value}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
 })
