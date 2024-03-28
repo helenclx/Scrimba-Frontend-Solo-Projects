@@ -6,6 +6,8 @@
 
     --clr-txt-default: #121212;
     --clr-result-focus: #000;
+    --clr-input-border: #8d8d8d;
+    --clr-input-bg: #fff;
 
     --ht-result-color: 8rem;
 }
@@ -124,9 +126,20 @@ main {
         'btn btn btn';
 }
 
-.form * {
+.form *,
+.result__value {
     cursor: pointer;
+    border-radius: 0.3em;
+    border: 0.14em solid var(--clr-input-border);
+    background-color: var(--clr-input-bg);
+}
+
+.form * {
     height: 2.5rem;
+}
+
+.form *:focus {
+    outline: 0.2em solid var(--clr-input-border);
 }
 
 .form__seed-color {
@@ -160,8 +173,7 @@ main {
     height: 100%;
 }
 
-.result__color,
-.result__value {
+.result__color {
     cursor: pointer;
 }
 
@@ -170,12 +182,13 @@ main {
 }
 
 .result__color:focus {
-    border: 0.2em solid var(--clr-result-focus);
+    outline: 0.2em solid var(--clr-result-focus);
 }
 
 .result__value {
     display: block;
-    margin: 0 auto;
+    margin: 0.7em auto 0;
+    padding: 0.3em 0.5em;
 }
 
 /* Attribution */
