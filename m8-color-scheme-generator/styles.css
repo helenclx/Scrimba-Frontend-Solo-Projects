@@ -179,7 +179,11 @@ body,
 }
 
 /* Tablet screen size */
-@media only screen and (min-width: 43.75rem) {}
+@media only screen and (min-width: 43.75rem) {
+    main {
+        max-width: 50rem;
+    }
+}
 
 /* Desktop screen size */
 @media only screen and (min-width: 60rem) {}
