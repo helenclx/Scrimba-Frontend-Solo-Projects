@@ -121,9 +121,7 @@ main {
     width: 100%;
     display: grid;
     gap: 0.7em;
-    grid-template-areas:
-        'seed mode mode'
-        'btn btn btn';
+    grid-template: 1fr 1fr / 1fr 3fr;
 }
 
 .form *,
@@ -143,18 +141,15 @@ main {
 }
 
 .form__seed-color {
-    grid-area: seed;
-    min-width: 4rem;
     width: auto;
 }
 
 .form__color-scheme {
-    grid-area: mode;
     width: auto;
 }
 
 .form__btn {
-    grid-area: btn;
+    grid-column: span 2;
 }
 
 /* Results Section */
@@ -222,7 +217,11 @@ main {
     }
 
     .form {
-        grid-template-areas: 'seed mode mode mode btn btn btn';
+        grid-template: 1fr / 1fr 4fr 3fr;
+    }
+
+    .form__btn {
+        grid-column: span 1;
     }
 
     .results {
@@ -241,6 +240,3 @@ main {
         max-width: 50rem;
     }
 }
-
-/* Desktop screen size */
-@media only screen and (min-width: 60rem) {}
