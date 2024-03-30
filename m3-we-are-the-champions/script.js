@@ -127,6 +127,7 @@ const renderEndorsement = (item) => {
 
     const likeBtn = document.createElement('button');
     likeBtn.classList.add('endorsement__likes');
+    likeBtn.ariaLabel = 'Like this endorsement message';
 
     const fontAwesomeIcon = document.createElement('i');
     fontAwesomeIcon.classList.add('fa-solid', 'fa-heart');
