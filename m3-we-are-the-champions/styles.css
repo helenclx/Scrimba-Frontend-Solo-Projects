@@ -128,10 +128,10 @@ h1, h2 {
 }
 
 /* Form section */
-.form,
-.form__names {
+.form {
     display: grid;
     gap: 0.7rem;
+    grid-template: repeat(5, auto) / repeat(2, 1fr);
 }
 
 .form__message,
@@ -156,10 +156,7 @@ h1, h2 {
 
 .form__message {
     resize: none;
-}
-
-.form__names {
-    grid-template-columns: 1fr 1fr;
+    grid-column: span 2;
 }
 
 .form__name {
@@ -174,6 +171,7 @@ h1, h2 {
     border-radius: var(--border-radius);
     padding: 0.8rem;
     font-size: 1.3rem;
+    grid-column: span 2;
 }
 
 .form__btn:hover {
