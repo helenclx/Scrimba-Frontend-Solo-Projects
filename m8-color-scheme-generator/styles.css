@@ -140,9 +140,9 @@ main {
     outline: 0.2em solid var(--clr-input-border);
 }
 
-/* .form__seed-color {
+.form__seed-color {
     width: auto;
-} */
+}
 
 .form__btn {
     grid-column: span 2;
