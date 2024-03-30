@@ -189,8 +189,12 @@ h1, h2 {
     margin: 1rem 0;
 }
 
-.endorsements__list {
+.endorsements__list,
+.endorsement {
     display: grid;
+}
+
+.endorsements__list {
     grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(15rem, 100%/4)), 1fr));
     gap: 0.7rem;
 }
@@ -199,15 +203,12 @@ h1, h2 {
     background-color: var(--clr-white);
     color: var(--clr-body-bg);
     padding: 0.7rem;
+    grid-template: repeat(3, auto) / repeat(2, auto);
 }
 
 .endorsement__msg {
     margin: 0.75rem 0;
-}
-
-.endorsement__footer {
-    display: flex;
-    justify-content: space-between;
+    grid-column: span 2;
 }
 
 .endorsement__name {
@@ -218,6 +219,7 @@ h1, h2 {
     background-color: transparent;
     border: none;
     border-radius: 0.15em;
+    justify-self: end;
 }
 
 .endorsement__likes:hover {

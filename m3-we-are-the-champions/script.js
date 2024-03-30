@@ -121,9 +121,6 @@ const renderEndorsement = (item) => {
     newEndorsementMsg.classList.add('endorsement__msg');
     newEndorsementMsg.textContent = itemValue.message;
 
-    const newEndorsemenFooter = document.createElement('div');
-    newEndorsemenFooter.classList.add('endorsement__footer');
-
     const newEndorsementFrom = document.createElement('p');
     newEndorsementFrom.classList.add('endorsement__name');
     newEndorsementFrom.textContent = `From ${itemValue.from}`;
@@ -143,6 +140,5 @@ const renderEndorsement = (item) => {
     likeBtn.append(fontAwesomeIcon, likeCountEl);
 
     endorsementListEl.append(newEndorsementDiv);
-    newEndorsementDiv.append(newEndorsementTo, newEndorsementMsg, newEndorsemenFooter);
-    newEndorsemenFooter.append(newEndorsementFrom, likeBtn);
+    newEndorsementDiv.append(newEndorsementTo, newEndorsementMsg, newEndorsementFrom, likeBtn);
 };
