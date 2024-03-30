@@ -7,8 +7,11 @@ const resultsContainer = document.querySelector('.results');
 
 formEl.addEventListener('submit', (event) => {
     event.preventDefault();
+    getColorScheme(seedColorEl.value.slice(1), colorScemeEl.value);
+});
 
-    fetch(`https://www.thecolorapi.com/scheme?hex=${seedColorEl.value.slice(1)}&mode=${colorScemeEl.value}`)
+const getColorScheme = (colorHex, colorMode) => {
+    fetch(`https://www.thecolorapi.com/scheme?hex=${colorHex}&mode=${colorMode}`)
         .then(response => response.json())
         .then(data => {
             resultsContainer.innerHTML = '';
@@ -39,8 +42,8 @@ formEl.addEventListener('submit', (event) => {
                 newResult.append(newResultColor);
                 newResult.append(newResultValue);
             })
-        })
-});
+        });
+};
 
 const copyColorValue = (value) => {
     navigator.clipboard.writeText(value);
