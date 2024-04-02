@@ -86,6 +86,8 @@ document.addEventListener('click', (e) => {
     if (e.target.dataset.watchlist) {
         if (resultsContainer) {
             updateWatchList(resultsArr, e.target.dataset.watchlist);
+            e.target.textContent = renderWatchlistBtn(e.target.dataset.watchlist).btnText;
+            e.target.ariaLabel = renderWatchlistBtn(e.target.dataset.watchlist).ariaLabel;
         } else if (watchlistContainer) {
             updateWatchList(watchlist, e.target.dataset.watchlist);
             e.target.parentElement.remove();
