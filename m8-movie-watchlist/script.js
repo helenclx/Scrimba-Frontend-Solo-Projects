@@ -9,6 +9,7 @@ const watchlistContainer = document.querySelector('.watchlist');
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     searchMovies(movieSearchInput.value);
+    movieSearchInput.value = '';
 });
 
 const searchMovies = async (input) => {
