@@ -41,6 +41,12 @@ const searchMovies = async (input) => {
             if (e.target.dataset.watchlist) {
                 const targetMovieObj = data.Search.filter(movie => movie.imdbID === e.target.dataset.watchlist)[0];
                 console.log("Target movie object:", targetMovieObj);
+
+                if (!watchlist.includes(targetMovieObj)) {
+                    watchlist.push(targetMovieObj);
+                    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+                    console.log("Updated Watchlist:", watchlist);
+                }
             }
         });
     } catch (error) {
