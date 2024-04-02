@@ -24,7 +24,7 @@ const searchMovies = async (input) => {
         resultsContainer.append(resultHeading);
 
         data.Search.forEach(result => {
-            displayMovieResult(result.imdbID);
+            displayMovieSearchResults(result.imdbID);
         });
 
         document.addEventListener('click', (e) => {
@@ -42,25 +42,28 @@ const searchMovies = async (input) => {
     }
 };
 
-const displayMovieResult = async (imdbID) => {
+const displayMovieSearchResults = async (imdbID) => {
     try {
         const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`);
         const data = await response.json();
-
-        const {Poster, Title, imdbRating, Runtime, Genre, Plot} = data;
-
-        resultsContainer.innerHTML += `
-            <div class="result">
-                <img src="${Poster}" alt="Poster of ${Title}">
-                <h3>${Title}</h3>
-                <p>${imdbRating}</p>
-                <p>${Runtime}</p>
-                <p>${Genre}</p>
-                <button class="result__watchlist-btn" data-watchlist="${imdbID}" aria-label="Add to watchlist">Watchlist</button>
-                <p>${Plot}</p>
-            </div>
-        `;
+        renderMovie(data);
     } catch (error) {
         console.error(error);
     }
+};
+
+const renderMovie = (obj) => {
+    const {imdbID, Poster, Title, imdbRating, Runtime, Genre, Plot} = obj;
+
+    resultsContainer.innerHTML += `
+        <div class="result">
+            <img src="${Poster}" alt="Poster of ${Title}">
+            <h3>${Title}</h3>
+            <p>${imdbRating}</p>
+            <p>${Runtime}</p>
+            <p>${Genre}</p>
+            <button class="result__watchlist-btn" data-watchlist="${imdbID}" aria-label="Add to watchlist">Watchlist</button>
+            <p>${Plot}</p>
+        </div>
+    `;
 };
