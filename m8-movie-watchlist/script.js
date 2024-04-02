@@ -62,18 +62,18 @@ const renderMovie = (obj, container) => {
             <p>${imdbRating}</p>
             <p>${Runtime}</p>
             <p>${Genre}</p>
-            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${renderWatchlistBtn(obj).ariaLabel}">${renderWatchlistBtn(obj).btnText}</button>
+            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${renderWatchlistBtn(imdbID).ariaLabel}">${renderWatchlistBtn(imdbID).btnText}</button>
             <p>${Plot}</p>
         </div>
     `;
 };
 
-const renderWatchlistBtn = (movieObj) => {
+const renderWatchlistBtn = (imdbID) => {
     let watchlistBtnText = 'Watchlist';
     let watchlistBtnAriaLabel = 'Add to Watchlist';
 
     for (const movie of watchlist) {
-        if (movie.imdbID === movieObj.imdbID) {
+        if (Object.values(movie).includes(imdbID)) {
             watchlistBtnText = 'Remove';
             watchlistBtnAriaLabel = 'Remove from watchlist';
         }
