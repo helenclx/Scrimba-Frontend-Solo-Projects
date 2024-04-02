@@ -23,6 +23,8 @@ if (searchForm) {
 }
 
 const searchMovies = async (input) => {
+    resultsContainer.innerHTML = '';
+
     try {
         const paramStr = input.replace(/\s+/gi, '+');
         const response = await fetch(`https://www.omdbapi.com/?s=${paramStr}&type=movie&apikey=${API_KEY}`);
