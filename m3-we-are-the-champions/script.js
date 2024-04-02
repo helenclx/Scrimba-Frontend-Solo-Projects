@@ -73,12 +73,7 @@ onValue(endorsementsInDB, (snapshot) => {
         // Event for when a user likes an endorsement
         document.addEventListener('click', (e) => {
             if (e.target.dataset.like) {
-                let targetEndoesementArr = [];
-                endorsementsArr.forEach(endorsement => {
-                    if (endorsement[0] === e.target.dataset.like) {
-                        targetEndoesementArr = endorsement;
-                    }
-                });
+                const targetEndoesementArr = endorsementsArr.filter(endorsement => endorsement[0] === e.target.dataset.like)[0];
 
                 if (!localStorage.getItem(e.target.dataset.like)) {
                     targetEndoesementArr[1].likes++;
