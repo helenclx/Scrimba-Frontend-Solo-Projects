@@ -23,8 +23,10 @@ const searchMovies = async (input) => {
         resultHeading.textContent = `Search results for "${input}":`;
         resultsContainer.append(resultHeading);
 
-        data.Search.forEach(result => {
-            displayMovieSearchResults(result.imdbID);
+        data.Search.forEach(async (result) => {
+            const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&apikey=${API_KEY}`);
+            const data = await response.json();
+            renderMovie(data);
         });
 
         document.addEventListener('click', (e) => {
@@ -39,16 +41,6 @@ const searchMovies = async (input) => {
         const resultHeading = document.createElement('h2');
         resultHeading.textContent = `No results for "${input}" found.`;
         resultsContainer.append(resultHeading);
-    }
-};
-
-const displayMovieSearchResults = async (imdbID) => {
-    try {
-        const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`);
-        const data = await response.json();
-        renderMovie(data);
-    } catch (error) {
-        console.error(error);
     }
 };
 
