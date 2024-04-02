@@ -75,7 +75,7 @@ const renderWatchlistBtn = (imdbID) => {
     for (const movie of watchlist) {
         if (Object.values(movie).includes(imdbID)) {
             watchlistBtnText = 'Remove';
-            watchlistBtnAriaLabel = 'Remove from watchlist';
+            watchlistBtnAriaLabel = 'Remove from Watchlist';
         }
     };
 
