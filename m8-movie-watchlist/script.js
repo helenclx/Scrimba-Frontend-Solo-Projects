@@ -6,7 +6,9 @@ const movieSearchInput = document.getElementById('movie-search');
 const resultsContainer = document.querySelector('.results');
 const watchlistContainer = document.querySelector('.watchlist');
 
+let resultsArr = [];
 let watchlist = [];
+
 if (localStorage.getItem("watchlist")) {
     watchlist = JSON.parse(localStorage.getItem("watchlist"));
 }
@@ -31,8 +33,6 @@ const searchMovies = async (input) => {
         resultHeading.textContent = `Search results for "${input}":`;
         resultsContainer.append(resultHeading);
 
-        let resultsArr = [];
-
         data.Search.forEach(async (result) => {
             const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&apikey=${API_KEY}`);
             const data = await response.json();
@@ -41,19 +41,6 @@ const searchMovies = async (input) => {
         });
 
         console.log("Results Array:", resultsArr);
-
-        document.addEventListener('click', (e) => {
-            if (e.target.dataset.watchlist) {
-                const targetMovieObj = resultsArr.filter(movie => movie.imdbID === e.target.dataset.watchlist)[0];
-                console.log("Target movie object:", targetMovieObj);
-
-                if (!watchlist.includes(targetMovieObj)) {
-                    watchlist.push(targetMovieObj);
-                    localStorage.setItem("watchlist", JSON.stringify(watchlist));
-                    console.log("Updated Watchlist:", watchlist);
-                }
-            }
-        });
     } catch (error) {
         console.error(error);
 
@@ -89,18 +76,54 @@ const renderMovie = (obj, container) => {
     `;
 };
 
-if (watchlistContainer) {
-    const displayWatchlist = () => {
-        if (!localStorage.getItem("watchlist")) {
-            watchlistContainer.innerHTML = `
-                <p>Your watchlist is looking a little empty...</p>
-                <a href="index.html">Let’s add some movies!</a>
-            `;
-        } else {
-            watchlist.forEach(movie => {
-                renderMovie(movie, watchlistContainer);
-            })
+document.addEventListener('click', (e) => {
+    if (e.target.dataset.watchlist) {
+        if (resultsContainer) {
+            updateWatchList(resultsArr, e.target.dataset.watchlist);
+        } else if (watchlistContainer) {
+            updateWatchList(watchlist, e.target.dataset.watchlist);
+            displayWatchlist();
         }
-    };
+    }
+});
+
+const updateWatchList = (arr, targetId) => {
+    let targetMovieObj = {};
+
+    for (const movie of arr) {
+        if (Object.values(movie).includes(targetId)) {
+            targetMovieObj = movie;
+        }
+    }
+
+    console.log("Target movie object:", targetMovieObj);
+
+    if (!watchlist.includes(targetMovieObj)) {
+        watchlist.push(targetMovieObj);
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
+        console.log("Updated Watchlist:", watchlist);
+    } else {
+        const targetMovieObjIndex = watchlist.indexOf(targetMovieObj);
+        console.log("Target Movie Object Index:", targetMovieObjIndex);
+        watchlist.splice(targetMovieObjIndex, 1);
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    }
+};
+
+const displayWatchlist = () => {
+    if (watchlist.length === 0) {
+        watchlistContainer.innerHTML = '';
+        watchlistContainer.innerHTML = `
+            <p>Your watchlist is looking a little empty...</p>
+            <a href="index.html">Let’s add some movies!</a>
+        `;
+    } else {
+        watchlist.forEach(movie => {
+            renderMovie(movie, watchlistContainer);
+        })
+    }
+};
+
+if (watchlistContainer) {
     displayWatchlist();
 }
