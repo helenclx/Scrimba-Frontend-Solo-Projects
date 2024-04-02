@@ -6,6 +6,8 @@ const movieSearchInput = document.getElementById('movie-search');
 const resultsContainer = document.querySelector('.results');
 const watchlistContainer = document.querySelector('.watchlist');
 
+let watchlist = [];
+
 if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
