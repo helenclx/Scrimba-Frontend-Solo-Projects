@@ -60,7 +60,7 @@ const renderMovie = (obj, container) => {
             <p>${imdbRating}</p>
             <p>${Runtime}</p>
             <p>${Genre}</p>
-            ${renderWatchlistBtn(obj)}
+            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${renderWatchlistBtn(obj).ariaLabel}">${renderWatchlistBtn(obj).btnText}</button>
             <p>${Plot}</p>
         </div>
     `;
@@ -77,9 +77,7 @@ const renderWatchlistBtn = (movieObj) => {
         }
     };
 
-    const btnHTML = `<button class="movie__watchlist-btn" data-watchlist="${movieObj.imdbID}" aria-label="${watchlistBtnAriaLabel}">${watchlistBtnText}</button>`
-
-    return btnHTML;
+    return {btnText: watchlistBtnText, ariaLabel: watchlistBtnAriaLabel};
 };
 
 document.addEventListener('click', (e) => {
@@ -118,8 +116,9 @@ const updateWatchList = (arr, targetId) => {
 };
 
 const displayWatchlist = () => {
+    watchlistContainer.innerHTML = '';
+
     if (watchlist.length === 0) {
-        watchlistContainer.innerHTML = '';
         watchlistContainer.innerHTML = `
             <p>Your watchlist is looking a little empty...</p>
             <a href="index.html">Let’s add some movies!</a>
