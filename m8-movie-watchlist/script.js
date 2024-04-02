@@ -7,6 +7,10 @@ const resultsContainer = document.querySelector('.results');
 const watchlistContainer = document.querySelector('.watchlist');
 
 let watchlist = [];
+if (localStorage.getItem("watchlist")) {
+    watchlist = JSON.parse(localStorage.getItem("watchlist"));
+}
+console.log("Watchlist:", watchlist);
 
 if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
