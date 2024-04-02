@@ -60,6 +60,7 @@ const searchMovies = async (input) => {
 
 const renderMovie = (obj, container) => {
     const {imdbID, Poster, Title, imdbRating, Runtime, Genre, Plot} = obj;
+    console.log(obj);
 
     container.innerHTML += `
         <div class="movie">
@@ -81,6 +82,10 @@ if (watchlistContainer) {
                 <p>Your watchlist is looking a little empty...</p>
                 <a href="index.html">Let’s add some movies!</a>
             `;
+        } else {
+            watchlist.forEach(movie => {
+                renderMovie(movie, watchlistContainer);
+            })
         }
     };
     displayWatchlist();
