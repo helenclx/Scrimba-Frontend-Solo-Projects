@@ -19,7 +19,9 @@ const searchMovies = async (input) => {
         const data = await response.json();
         console.log("Search Results:", data);
 
-        resultsContainer.innerHTML = `<h2>Search results for "${input}":</h2>`
+        const resultHeading = document.createElement('h2');
+        resultHeading.textContent = `Search results for "${input}":`;
+        resultsContainer.append(resultHeading);
 
         data.Search.forEach(result => {
             displayMovieResult(result.imdbID);
