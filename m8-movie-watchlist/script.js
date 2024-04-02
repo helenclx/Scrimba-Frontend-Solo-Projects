@@ -27,6 +27,10 @@ const searchMovies = async (input) => {
         });
     } catch (error) {
         console.error(error);
+
+        const resultHeading = document.createElement('h2');
+        resultHeading.textContent = `No results for "${input}" found.`;
+        resultsContainer.append(resultHeading);
     }
 };
 
