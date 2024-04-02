@@ -60,8 +60,6 @@ document.addEventListener('click', (e) => {
             if (item.id === Number(e.target.dataset.add)) {
                 orderedItems.push(item);
                 totalPrice += item.price;
-                console.log("Ordered items: ", orderedItems);
-                console.log("Total price: ", totalPrice);
             }
         });
         renderOrderedItems(orderedItems);
@@ -73,8 +71,6 @@ document.addEventListener('click', (e) => {
             if (index === Number(e.target.dataset.remove)) {
                 orderedItems.splice(index, 1);
                 totalPrice -= item.price;
-                console.log("Ordered items: ", orderedItems);
-                console.log("Total price: ", totalPrice);
             }
         });
         renderOrderedItems(orderedItems);
