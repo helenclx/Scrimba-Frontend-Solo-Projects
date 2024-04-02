@@ -62,7 +62,7 @@ const renderMovie = (obj, container) => {
     `;
 };
 
-if (watchlistContainer){
+if (watchlistContainer) {
     const displayWatchlist = () => {
         watchlistContainer.innerHTML = `
             <p>Your watchlist is looking a little empty...</p>
