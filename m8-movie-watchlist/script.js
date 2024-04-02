@@ -12,7 +12,6 @@ let watchlist = [];
 if (localStorage.getItem("watchlist")) {
     watchlist = JSON.parse(localStorage.getItem("watchlist"));
 }
-console.log("Watchlist:", watchlist);
 
 if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
@@ -29,7 +28,6 @@ const searchMovies = async (input) => {
         const paramStr = input.replace(/\s+/gi, '+');
         const response = await fetch(`https://www.omdbapi.com/?s=${paramStr}&type=movie&apikey=${API_KEY}`);
         const data = await response.json();
-        console.log("Search Results:", data);
 
         const resultHeading = document.createElement('h2');
         resultHeading.textContent = `Search results for "${input}":`;
@@ -45,8 +43,6 @@ const searchMovies = async (input) => {
                 console.error(error);
             }
         });
-
-        console.log("Results Array:", resultsArr);
     } catch (error) {
         console.error(error);
 
@@ -111,15 +107,11 @@ const updateWatchList = (arr, targetId) => {
         }
     }
 
-    console.log("Target movie object:", targetMovieObj);
-
     if (!watchlist.includes(targetMovieObj)) {
         watchlist.push(targetMovieObj);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
-        console.log("Updated Watchlist:", watchlist);
     } else {
         const targetMovieObjIndex = watchlist.indexOf(targetMovieObj);
-        console.log("Target Movie Object Index:", targetMovieObjIndex);
         watchlist.splice(targetMovieObjIndex, 1);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
     }
