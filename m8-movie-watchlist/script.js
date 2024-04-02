@@ -36,10 +36,14 @@ const searchMovies = async (input) => {
         resultsContainer.append(resultHeading);
 
         data.Search.forEach(async (result) => {
-            const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&apikey=${API_KEY}`);
-            const data = await response.json();
-            resultsArr.push(data);
-            renderMovie(data, resultsContainer);
+            try {
+                const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&apikey=${API_KEY}`);
+                const data = await response.json();
+                resultsArr.push(data);
+                renderMovie(data, resultsContainer);
+            } catch (error) {
+                console.error(error);
+            }
         });
 
         console.log("Results Array:", resultsArr);
