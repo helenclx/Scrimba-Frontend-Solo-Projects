@@ -83,13 +83,15 @@ const renderWatchlistBtn = (imdbID) => {
 };
 
 document.addEventListener('click', (e) => {
-    if (e.target.dataset.watchlist) {
+    const eventTargetIMDbId = e.target.dataset.watchlist;
+
+    if (eventTargetIMDbId) {
         if (resultsContainer) {
-            updateWatchList(resultsArr, e.target.dataset.watchlist);
-            e.target.textContent = renderWatchlistBtn(e.target.dataset.watchlist).btnText;
-            e.target.ariaLabel = renderWatchlistBtn(e.target.dataset.watchlist).ariaLabel;
+            updateWatchList(resultsArr, eventTargetIMDbId);
+            e.target.textContent = renderWatchlistBtn(eventTargetIMDbId).btnText;
+            e.target.ariaLabel = renderWatchlistBtn(eventTargetIMDbId).ariaLabel;
         } else if (watchlistContainer) {
-            updateWatchList(watchlist, e.target.dataset.watchlist);
+            updateWatchList(watchlist, eventTargetIMDbId);
             e.target.parentElement.remove();
             displayWatchlist();
         }
