@@ -48,13 +48,13 @@ const renderMovie = (obj) => {
     const {imdbID, Poster, Title, imdbRating, Runtime, Genre, Plot} = obj;
 
     resultsContainer.innerHTML += `
-        <div class="result">
+        <div class="movie">
             <img src="${Poster}" alt="Poster of ${Title}">
             <h3>${Title}</h3>
             <p>${imdbRating}</p>
             <p>${Runtime}</p>
             <p>${Genre}</p>
-            <button class="result__watchlist-btn" data-watchlist="${imdbID}" aria-label="Add to watchlist">Watchlist</button>
+            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="Add to watchlist">Watchlist</button>
             <p>${Plot}</p>
         </div>
     `;
