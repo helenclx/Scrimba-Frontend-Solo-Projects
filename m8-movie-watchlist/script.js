@@ -6,11 +6,13 @@ const movieSearchInput = document.getElementById('movie-search');
 const resultsContainer = document.querySelector('.results');
 const watchlistContainer = document.querySelector('.watchlist');
 
-searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    searchMovies(movieSearchInput.value);
-    movieSearchInput.value = '';
-});
+if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        searchMovies(movieSearchInput.value);
+        movieSearchInput.value = '';
+    });
+}
 
 const searchMovies = async (input) => {
     try {
@@ -59,3 +61,13 @@ const renderMovie = (obj, container) => {
         </div>
     `;
 };
+
+if (watchlistContainer){
+    const displayWatchlist = () => {
+        watchlistContainer.innerHTML = `
+            <p>Your watchlist is looking a little empty...</p>
+            <a href="index.html">Let’s add some movies!</a>
+        `;
+    };
+    displayWatchlist();
+}
