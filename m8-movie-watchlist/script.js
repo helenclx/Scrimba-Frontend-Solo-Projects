@@ -53,16 +53,6 @@ const searchMovies = async (input) => {
 const renderMovie = (obj, container) => {
     const {imdbID, Poster, Title, imdbRating, Runtime, Genre, Plot} = obj;
 
-    let watchlistBtnText = 'Watchlist';
-    let watchlistBtnAriaLabel = 'Add to Watchlist';
-
-    for (const movie of watchlist) {
-        if (movie.imdbID === obj.imdbID) {
-            watchlistBtnText = 'Remove';
-            watchlistBtnAriaLabel = 'Remove from watchlist';
-        }
-    };
-
     container.innerHTML += `
         <div class="movie">
             <img src="${Poster}" alt="Poster of ${Title}">
@@ -70,10 +60,26 @@ const renderMovie = (obj, container) => {
             <p>${imdbRating}</p>
             <p>${Runtime}</p>
             <p>${Genre}</p>
-            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${watchlistBtnAriaLabel}">${watchlistBtnText}</button>
+            ${renderWatchlistBtn(obj)}
             <p>${Plot}</p>
         </div>
     `;
+};
+
+const renderWatchlistBtn = (movieObj) => {
+    let watchlistBtnText = 'Watchlist';
+    let watchlistBtnAriaLabel = 'Add to Watchlist';
+
+    for (const movie of watchlist) {
+        if (movie.imdbID === movieObj.imdbID) {
+            watchlistBtnText = 'Remove';
+            watchlistBtnAriaLabel = 'Remove from watchlist';
+        }
+    };
+
+    const btnHTML = `<button class="movie__watchlist-btn" data-watchlist="${movieObj.imdbID}" aria-label="${watchlistBtnAriaLabel}">${watchlistBtnText}</button>`
+
+    return btnHTML;
 };
 
 document.addEventListener('click', (e) => {
