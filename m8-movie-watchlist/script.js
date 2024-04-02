@@ -29,13 +29,8 @@ const searchMovies = async (input) => {
 
         document.addEventListener('click', (e) => {
             if (e.target.dataset.watchlist) {
-                let targetMovieObj = {};
-                data.Search.forEach(movie => {
-                    if (movie.imdbID === e.target.dataset.watchlist) {
-                        targetMovieObj = movie;
-                        console.log("Target movie object:", targetMovieObj);
-                    }
-                });
+                const targetMovieObj = data.Search.filter(movie => movie.imdbID === e.target.dataset.watchlist)[0];
+                console.log("Target movie object:", targetMovieObj);
             }
         });
     } catch (error) {
