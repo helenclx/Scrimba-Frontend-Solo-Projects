@@ -31,15 +31,20 @@ const searchMovies = async (input) => {
         resultHeading.textContent = `Search results for "${input}":`;
         resultsContainer.append(resultHeading);
 
+        let resultsArr = [];
+
         data.Search.forEach(async (result) => {
             const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&apikey=${API_KEY}`);
             const data = await response.json();
+            resultsArr.push(data);
             renderMovie(data, resultsContainer);
         });
 
+        console.log("Results Array:", resultsArr);
+
         document.addEventListener('click', (e) => {
             if (e.target.dataset.watchlist) {
-                const targetMovieObj = data.Search.filter(movie => movie.imdbID === e.target.dataset.watchlist)[0];
+                const targetMovieObj = resultsArr.filter(movie => movie.imdbID === e.target.dataset.watchlist)[0];
                 console.log("Target movie object:", targetMovieObj);
 
                 if (!watchlist.includes(targetMovieObj)) {
@@ -60,7 +65,6 @@ const searchMovies = async (input) => {
 
 const renderMovie = (obj, container) => {
     const {imdbID, Poster, Title, imdbRating, Runtime, Genre, Plot} = obj;
-    console.log(obj);
 
     container.innerHTML += `
         <div class="movie">
