@@ -64,10 +64,12 @@ const renderMovie = (obj, container) => {
 
 if (watchlistContainer) {
     const displayWatchlist = () => {
-        watchlistContainer.innerHTML = `
-            <p>Your watchlist is looking a little empty...</p>
-            <a href="index.html">Let’s add some movies!</a>
-        `;
+        if (!localStorage.getItem("watchlist")) {
+            watchlistContainer.innerHTML = `
+                <p>Your watchlist is looking a little empty...</p>
+                <a href="index.html">Let’s add some movies!</a>
+            `;
+        }
     };
     displayWatchlist();
 }
