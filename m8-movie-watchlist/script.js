@@ -26,7 +26,7 @@ const searchMovies = async (input) => {
         data.Search.forEach(async (result) => {
             const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&apikey=${API_KEY}`);
             const data = await response.json();
-            renderMovie(data);
+            renderMovie(data, resultsContainer);
         });
 
         document.addEventListener('click', (e) => {
@@ -44,10 +44,10 @@ const searchMovies = async (input) => {
     }
 };
 
-const renderMovie = (obj) => {
+const renderMovie = (obj, container) => {
     const {imdbID, Poster, Title, imdbRating, Runtime, Genre, Plot} = obj;
 
-    resultsContainer.innerHTML += `
+    container.innerHTML += `
         <div class="movie">
             <img src="${Poster}" alt="Poster of ${Title}">
             <h3>${Title}</h3>
