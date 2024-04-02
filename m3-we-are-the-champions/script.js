@@ -49,7 +49,6 @@ const addEndorsement = () => {
             to: toInputEl.value,
             message: msgInputEl.value
         }
-        console.log('Entered endorsement:', endorsementObj);
         push(endorsementsInDB, endorsementObj);
     }
 };
@@ -64,7 +63,6 @@ const clearInputEl = () => {
 onValue(endorsementsInDB, (snapshot) => {
     if (snapshot.exists()) {
         let endorsementsArr = Object.entries(snapshot.val()).reverse();
-        console.log('Endorsements array:', endorsementsArr);
 
         clearEndorsementListEl();
 
