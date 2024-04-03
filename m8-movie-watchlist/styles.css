@@ -3,6 +3,8 @@
 /* ------------------- */
 :root {
     --ff-default: 'Inter';
+
+    --br-search: 0.3em;
 }
 
 /* ------------------- */
@@ -120,4 +122,9 @@ body {
 
 .search__input {
     padding: 0.3em 0.7em 0.3em 1.8em;
+    border-radius: var(--br-search) 0 0 var(--br-search);
+}
+
+.search__btn {
+    border-radius: 0 var(--br-search) var(--br-search) 0;
 }
