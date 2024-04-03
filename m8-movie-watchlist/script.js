@@ -59,7 +59,7 @@ const renderMovie = (obj, container) => {
         <div class="movie">
             <img src="${Poster}" alt="Poster of ${Title}">
             <h3>${Title}</h3>
-            <p>${imdbRating}</p>
+            <p><i class="fa-solid fa-star" aria-hidden="true"></i><span class="sr-only">IMDb rating:</span> ${imdbRating}</p>
             <p>${Runtime}</p>
             <p>${Genre}</p>
             <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${renderWatchlistBtn(imdbID).ariaLabel}">${renderWatchlistBtn(imdbID).btnInner}</button>
