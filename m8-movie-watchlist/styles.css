@@ -117,7 +117,7 @@ body,
 }
 
 .results {
-    gap: 1.5em;
+    gap: 2em;
 }
 
 .hero {
@@ -231,9 +231,9 @@ body {
     margin-bottom: 0.5em;
 }
 
-.result__separator {
-    width: 100%;
-    border: 0.1em solid var(--clr-movie-box-border);
+.movie {
+    padding-bottom: 1.5em;
+    border-bottom: 0.1em solid var(--clr-movie-box-border);
 }
 
 .movie:last-child {

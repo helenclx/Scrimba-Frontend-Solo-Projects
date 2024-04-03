@@ -76,7 +76,6 @@ const renderMovie = (obj, container) => {
             </button>
             <p class="movie__plot">${Plot}</p>
         </div>
-        <hr class="result__separator">
     `;
 };
 
