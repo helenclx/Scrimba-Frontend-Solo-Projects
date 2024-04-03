@@ -86,11 +86,28 @@ textarea:not([rows]) {
 /* STYLING BEGINS      */
 /* ------------------- */
 
+/* Flex containers */
+body,
+.hero,
+.search,
+.results,
+.watchlist {
+    display: flex;
+}
+
+body,
+.results,
+.watchlist {
+    flex-direction: column;
+    align-items: center;
+}
+
 /* General Styles */
 body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
 }
 
+/* Search form */
 .search__wrapper {
     position: relative;
 }
