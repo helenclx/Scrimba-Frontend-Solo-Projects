@@ -35,7 +35,7 @@ const searchMovies = async (input) => {
 
         data.Search.forEach(async (result) => {
             try {
-                const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&apikey=${API_KEY}`);
+                const response = await fetch(`https://www.omdbapi.com/?i=${result.imdbID}&plot=full&apikey=${API_KEY}`);
                 const data = await response.json();
                 resultsArr.push(data);
                 renderMovie(data, resultsContainer);
