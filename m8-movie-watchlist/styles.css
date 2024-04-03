@@ -201,6 +201,10 @@ body {
     margin-top: 2em;
 }
 
+.result__msg{
+    text-align: center;
+}
+
 .movie {
     padding: 2em 0;
     border-bottom: 0.2em solid var(--clr-movie-box-border);
