@@ -90,3 +90,17 @@ textarea:not([rows]) {
 body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
 }
+
+.search__wrapper {
+    position: relative;
+}
+
+.search__wrapper i {
+    position: absolute;
+    top: 0.65em;
+    left: 0.5em;
+}
+
+.search__input {
+    padding: 0.3em 0.7em 0.3em 1.8em;
+}

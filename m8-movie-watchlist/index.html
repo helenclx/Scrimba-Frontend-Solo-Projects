@@ -22,7 +22,10 @@
             <a href="watchlist.html" class="hero__nav">My Watchlist</a>
         </header>
         <form class="search">
-            <input type="text" name="movie-search-input" id="movie-search" class="search__input" placeholder="Search for a movie" aria-label="Search for a movie" required>
+            <div class="search__wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="movie-search-input" id="movie-search" class="search__input" placeholder="Search for a movie" aria-label="Search for a movie" required>
+            </div>
             <button class="search__btn">Search</button>
         </form>
         <main class="results"></main>
