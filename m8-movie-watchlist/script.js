@@ -30,7 +30,7 @@ const searchMovies = async (input) => {
         const data = await response.json();
 
         const resultHeading = document.createElement('h2');
-        resultHeading.classList.add('result__msg');
+        resultHeading.classList.add('result__heading');
         resultHeading.textContent = `Search results for "${input}":`;
         resultsContainer.append(resultHeading);
 
@@ -47,9 +47,9 @@ const searchMovies = async (input) => {
     } catch (error) {
         console.error(error);
 
-        const resultHeading = document.createElement('h2');
-        resultHeading.classList.add('result__msg');
-        resultHeading.textContent = `No results for "${input}" found.`;
+        const resultHeading = document.createElement('h3');
+        resultHeading.classList.add('result__error');
+        resultHeading.textContent = 'Unable to find what you\'re looking for. Please try another search.';
         resultsContainer.append(resultHeading);
     }
 };
