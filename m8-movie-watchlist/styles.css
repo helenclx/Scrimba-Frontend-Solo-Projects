@@ -117,14 +117,15 @@ body {
 .search__wrapper i {
     position: absolute;
     top: 0.65em;
-    left: 0.5em;
+    left: 1em;
 }
 
 .search__input {
-    padding: 0.3em 0.7em 0.3em 1.8em;
+    padding: 0.3em 1em 0.3em 2.5em;
     border-radius: var(--br-search) 0 0 var(--br-search);
 }
 
 .search__btn {
     border-radius: 0 var(--br-search) var(--br-search) 0;
+    padding: 0.3em 2em;
 }
