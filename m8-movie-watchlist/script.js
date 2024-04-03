@@ -62,24 +62,24 @@ const renderMovie = (obj, container) => {
             <p>${imdbRating}</p>
             <p>${Runtime}</p>
             <p>${Genre}</p>
-            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${renderWatchlistBtn(imdbID).ariaLabel}">${renderWatchlistBtn(imdbID).btnText}</button>
+            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${renderWatchlistBtn(imdbID).ariaLabel}">${renderWatchlistBtn(imdbID).btnInner}</button>
             <p>${Plot}</p>
         </div>
     `;
 };
 
 const renderWatchlistBtn = (imdbID) => {
-    let watchlistBtnText = 'Watchlist';
+    let watchlistbtnInner = `<i class="fa-solid fa-circle-plus"></i> Watchlist`;
     let watchlistBtnAriaLabel = 'Add to Watchlist';
 
     for (const movie of watchlist) {
         if (Object.values(movie).includes(imdbID)) {
-            watchlistBtnText = 'Remove';
+            watchlistbtnInner = `<i class="fa-solid fa-circle-minus"></i> Remove`;
             watchlistBtnAriaLabel = 'Remove from Watchlist';
         }
     };
 
-    return {btnText: watchlistBtnText, ariaLabel: watchlistBtnAriaLabel};
+    return {btnInner: watchlistbtnInner, ariaLabel: watchlistBtnAriaLabel};
 };
 
 document.addEventListener('click', (e) => {
@@ -88,7 +88,7 @@ document.addEventListener('click', (e) => {
     if (eventTargetIMDbId) {
         if (resultsContainer) {
             updateWatchList(resultsArr, eventTargetIMDbId);
-            e.target.textContent = renderWatchlistBtn(eventTargetIMDbId).btnText;
+            e.target.innerHTML = renderWatchlistBtn(eventTargetIMDbId).btnInner;
             e.target.ariaLabel = renderWatchlistBtn(eventTargetIMDbId).ariaLabel;
         } else if (watchlistContainer) {
             updateWatchList(watchlist, eventTargetIMDbId);
