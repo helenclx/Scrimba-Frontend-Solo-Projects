@@ -7,6 +7,7 @@
     --clr-hero-bg: #4e4e4e;
     --clr-input-border: #7b7b7b;
     --clr-search-btn: #e4e4e4;
+    --clr-result-msg: #717171;
     --clr-movie-box-border: #d1d1d1;
     --clr-rating-star: #FEC654;
 
@@ -112,8 +113,15 @@ body,
 }
 
 .hero {
-    justify-content: space-between;
     gap: 1em;
+}
+
+.results {
+    gap: 1.5em;
+}
+
+.hero {
+    justify-content: space-between;
 }
 
 /* Grid containers */
@@ -201,6 +209,18 @@ body {
     margin-top: 2em;
 }
 
+.fa-film,
+.result__nosearch,
+.result__heading,
+.result__error {
+    color: var(--clr-result-msg);
+}
+
+.fa-film {
+    font-size: 4rem;
+    margin-bottom: 1rem;;
+}
+
 .result__heading,
 .result__error {
     text-align: center;
@@ -208,12 +228,12 @@ body {
 }
 
 .result__heading {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
-.movie {
-    padding: 2em 0;
-    border-bottom: 0.2em solid var(--clr-movie-box-border);
+.result__separator {
+    width: 100%;
+    border: 0.1em solid var(--clr-movie-box-border);
 }
 
 .movie:last-child {
