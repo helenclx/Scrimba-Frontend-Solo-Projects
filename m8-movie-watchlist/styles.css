@@ -2,7 +2,9 @@
 /* Custom Properties   */
 /* ------------------- */
 :root {
+    --clr-text: #121212;
     --clr-movie-box-border: #d1d1d1;
+    --clr-rating-star: #FEC654;
 
     --ff-default: 'Inter';
 
@@ -113,6 +115,7 @@ body,
 /* General Styles */
 body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
+    color: var(--clr-text);
 }
 
 /* Search form */
@@ -150,6 +153,23 @@ body {
 
 .movie:last-child {
     border-bottom: 0;
+}
+
+.fa-star {
+    color: var(--clr-rating-star);
+}
+
+/* Utility classes */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Screen sizes larger than mobile */
