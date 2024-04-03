@@ -69,7 +69,7 @@ const renderMovie = (obj, container) => {
 };
 
 const renderWatchlistBtn = (imdbID) => {
-    let watchlistbtnInner = `<i class="fa-solid fa-circle-plus"></i> Watchlist`;
+    let watchlistbtnInner = `<i class="fa-solid fa-circle-plus" aria-hidden="true"></i> Watchlist`;
     let watchlistBtnAriaLabel = 'Add to Watchlist';
 
     for (const movie of watchlist) {
