@@ -57,13 +57,22 @@ const renderMovie = (obj, container) => {
 
     container.innerHTML += `
         <div class="movie">
-            <img src="${Poster}" alt="Poster of ${Title}">
-            <h3>${Title}</h3>
-            <p><i class="fa-solid fa-star" aria-hidden="true"></i><span class="sr-only">IMDb rating:</span> ${imdbRating}</p>
-            <p>${Runtime}</p>
-            <p>${Genre}</p>
-            <button class="movie__watchlist-btn" data-watchlist="${imdbID}" aria-label="${renderWatchlistBtn(imdbID).ariaLabel}">${renderWatchlistBtn(imdbID).btnInner}</button>
-            <p>${Plot}</p>
+            <img src="${Poster}" alt="Poster of ${Title}" class="movie__poster">
+            <h3 class="movie__title">${Title}</h3>
+            <p class="movie__rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <span class="sr-only">IMDb rating:</span> ${imdbRating}
+            </p>
+            <p class="movie__runtime">${Runtime}</p>
+            <p class="movie__genre">${Genre}</p>
+            <button
+                class="movie__watchlist-btn"
+                data-watchlist="${imdbID}"
+                aria-label="${renderWatchlistBtn(imdbID).ariaLabel}"
+            >
+                ${renderWatchlistBtn(imdbID).btnInner}
+            </button>
+            <p class="movie__plot">${Plot}</p>
         </div>
     `;
 };
