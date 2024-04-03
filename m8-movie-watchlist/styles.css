@@ -2,6 +2,8 @@
 /* Custom Properties   */
 /* ------------------- */
 :root {
+    --clr-movie-box-border: #d1d1d1;
+
     --ff-default: 'Inter';
 
     --br-search: 0.3em;
@@ -114,7 +116,9 @@ body {
 }
 
 /* Search form */
-.search {
+.search,
+.results,
+.watchlist {
     max-width: 90%;
 }
 
@@ -138,6 +142,16 @@ body {
     padding: 0.3em 2em;
 }
 
+/* Results and Watchlist containers */
+.movie {
+    padding: 2em 0;
+    border-bottom: 0.2em solid var(--clr-movie-box-border);
+}
+
+.movie:last-child {
+    border-bottom: 0;
+}
+
 /* Screen sizes larger than mobile */
 @media only screen and (min-width: 30rem) {
     .search{
@@ -157,4 +171,10 @@ body {
 @media only screen and (min-width: 43.75rem) {}
 
 /* Desktop screen size */
-@media only screen and (min-width: 60rem) {}
+@media only screen and (min-width: 60rem) {
+    .search,
+    .results,
+    .watchlist {
+        max-width: 60rem;
+    }
+}
