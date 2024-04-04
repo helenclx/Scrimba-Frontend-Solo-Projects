@@ -120,7 +120,8 @@ body,
     gap: 1em;
 }
 
-.results {
+.results,
+.watchlist {
     gap: 2em;
 }
 
