@@ -12,6 +12,7 @@ let watchlist = [];
 if (localStorage.getItem("watchlist")) {
     watchlist = JSON.parse(localStorage.getItem("watchlist"));
 }
+console.log(watchlist);
 
 if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
@@ -115,16 +116,19 @@ const updateWatchList = (arr, targetId) => {
     for (const movie of arr) {
         if (Object.values(movie).includes(targetId)) {
             targetMovieObj = movie;
+            console.log("Target Movie Object:", targetMovieObj);
         }
     }
 
     if (!watchlist.includes(targetMovieObj)) {
         watchlist.push(targetMovieObj);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
+        console.log("Updated Watchlist:", watchlist);
     } else {
         const targetMovieObjIndex = watchlist.indexOf(targetMovieObj);
         watchlist.splice(targetMovieObjIndex, 1);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
+        console.log("Updated Watchlist:", watchlist);
     }
 };
 
