@@ -149,6 +149,10 @@ body {
     color: var(--clr-text);
 }
 
+main {
+    min-height: 100vh;
+}
+
 button:hover {
     cursor: pointer;
 }
@@ -337,6 +341,20 @@ button:hover {
 
 .top-btn img {
     width: 1.6rem;
+}
+
+/* Attribution */
+.attribution,
+.attribution a {
+    color: var(--clr-white);
+}
+
+.attribution {
+    width: 100%;
+    text-align: center;
+    background-color: var(--clr-text);
+    color: var(--clr-white);
+    padding: 1em;
 }
 
 /* Utility classes */
