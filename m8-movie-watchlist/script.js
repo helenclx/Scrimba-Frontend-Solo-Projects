@@ -120,13 +120,13 @@ const updateWatchList = (arr, targetId) => {
         }
     }
 
-    if (!watchlist.includes(targetMovieObj)) {
-        watchlist.push(targetMovieObj);
+    if (watchlist.includes(targetMovieObj)) {
+        const targetMovieObjIndex = watchlist.indexOf(targetMovieObj);
+        watchlist.splice(targetMovieObjIndex, 1);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
         console.log("Updated Watchlist:", watchlist);
     } else {
-        const targetMovieObjIndex = watchlist.indexOf(targetMovieObj);
-        watchlist.splice(targetMovieObjIndex, 1);
+        watchlist.push(targetMovieObj);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
         console.log("Updated Watchlist:", watchlist);
     }
