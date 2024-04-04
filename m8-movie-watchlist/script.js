@@ -114,7 +114,7 @@ const updateWatchList = (arr, targetId) => {
     let targetMovieObj = {};
 
     for (const movie of arr) {
-        if (Object.values(movie).includes(targetId)) {
+        if (movie.imdbID === targetId) {
             targetMovieObj = movie;
             console.log("Target Movie Object:", targetMovieObj);
         }
