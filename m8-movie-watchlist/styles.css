@@ -172,7 +172,7 @@ button:hover {
     background-position: center;
     background-blend-mode: multiply;
     color: var(--clr-white);
-    padding: 1.5em;
+    padding: 2em 2em 3.5em;
 }
 
 .hero__nav {
@@ -378,7 +378,7 @@ button:hover {
 @media only screen and (min-width: 30rem) {
     .hero {
         min-height: 12rem;
-        padding: 1.5em 2.5em;
+        padding: 1.5em 2.5em 3em;
     }
 
     .search {
@@ -410,7 +410,7 @@ button:hover {
 /* Desktop screen size */
 @media only screen and (min-width: 60rem) {
     .hero {
-        padding: 2em 5em;
+        padding: 2em 5em 3em;
     }
 
     .search,
