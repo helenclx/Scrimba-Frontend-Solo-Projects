@@ -263,6 +263,7 @@ button:hover {
         'genr genr'
         'bttn bttn'
         'plot plot';
+    align-items: center;
 }
 
 .movie:last-child {
@@ -276,6 +277,7 @@ button:hover {
 
 .movie__title {
     grid-area: titl;
+    font-size: 1.2rem;
 }
 
 .movie__rating {
@@ -376,7 +378,16 @@ button:hover {
 }
 
 /* Tablet screen size */
-@media only screen and (min-width: 43.75rem) {}
+@media only screen and (min-width: 43.75rem) {
+    .movie {
+        grid-template-areas:
+            'post post .... .... .... .... .... .... .... ....'
+            'post post titl titl titl titl titl titl rate ....'
+            'post post time genr genr genr .... bttn .... ....'
+            'post post plot plot plot plot plot plot plot plot'
+            'post post .... .... .... .... .... .... .... ....';
+    }
+}
 
 /* Desktop screen size */
 @media only screen and (min-width: 60rem) {
