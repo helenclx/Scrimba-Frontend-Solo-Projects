@@ -120,7 +120,7 @@ const updateWatchList = (arr, targetId) => {
 
     const targetObjInWatchlist = watchlist.find(item => item.imdbID === targetId);
 
-    if(!targetObjInWatchlist) {
+    if (!targetObjInWatchlist) {
         watchlist.push(targetMovieObj);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
     } else {
