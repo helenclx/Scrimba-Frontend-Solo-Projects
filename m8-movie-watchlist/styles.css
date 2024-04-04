@@ -140,6 +140,10 @@ body {
     color: var(--clr-text);
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* Hero section */
 .hero,
 .hero__nav {
@@ -251,6 +255,15 @@ body {
 
 .fa-star {
     color: var(--clr-rating-star);
+}
+
+.movie__watchlist--btn {
+    border: none;
+    background-color: inherit;
+}
+
+.movie__watchlist--btn:focus {
+    outline: 0.2em solid var(--clr-text);
 }
 
 .watchlist__empty {

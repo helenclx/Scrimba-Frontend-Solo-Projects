@@ -68,7 +68,7 @@ const renderMovie = (obj, container) => {
             <p class="movie__runtime">${Runtime}</p>
             <p class="movie__genre">${Genre}</p>
             <button
-                class="movie__watchlist-btn"
+                class="movie__watchlist--btn"
                 data-watchlist="${imdbID}"
                 aria-label="${renderWatchlistBtn(imdbID).ariaLabel}"
             >
