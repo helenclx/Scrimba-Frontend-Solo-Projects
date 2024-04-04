@@ -130,9 +130,17 @@ body,
 }
 
 /* Grid containers */
-.search {
+.search,
+.movie {
     display: grid;
+}
+
+.search {
     gap: 0.5em;
+}
+
+.movie {
+    gap: 1em;
 }
 
 /* General Styles */
@@ -248,19 +256,55 @@ button:hover {
 .movie {
     padding-bottom: 1.5em;
     border-bottom: 0.2em solid var(--clr-movie-box-border);
+    grid-template-areas:
+        'post post'
+        'titl titl'
+        'rate time'
+        'genr genr'
+        'bttn bttn'
+        'plot plot';
 }
 
 .movie:last-child {
     border-bottom: 0;
 }
 
+.movie__poster {
+    grid-area: post;
+    margin: 0 auto;
+}
+
+.movie__title {
+    grid-area: titl;
+}
+
+.movie__rating {
+    grid-area: rate;
+}
+
 .fa-star {
     color: var(--clr-rating-star);
 }
 
+.movie__runtime {
+    grid-area: time;
+    grid-column: auto;
+}
+
+.movie__genre {
+    grid-area: genr;
+}
+
+.movie__plot {
+    grid-area: plot;
+}
+
 .movie__watchlist--btn {
-    border: none;
+    grid-area: bttn;
+    border: 0.1em solid var(--clr-text);
+    border-radius: 0.3em;
     background-color: inherit;
+    padding: 0.3em 0.6em;
 }
 
 .movie__watchlist--btn:focus {
