@@ -133,8 +133,10 @@ const displayWatchlist = () => {
 
     if (watchlist.length === 0) {
         watchlistContainer.innerHTML = `
-            <p>Your watchlist is looking a little empty...</p>
-            <a href="index.html">Let's add some movies!</a>
+            <div class="watchlist__empty">
+                <p class="watchlist__empty--text">Your watchlist is looking a little empty...</p>
+                <p><i class="fa-solid fa-circle-plus" aria-hidden="true"></i> <a href="index.html">Let's add some movies!</a></p>
+            </div>
         `;
     } else {
         watchlist.forEach(movie => {

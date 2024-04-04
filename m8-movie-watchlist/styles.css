@@ -101,6 +101,7 @@ textarea:not([rows]) {
 body,
 .hero,
 .results,
+.results__empty,
 .watchlist {
     display: flex;
     align-items: center;
@@ -108,11 +109,13 @@ body,
 
 body,
 .results,
+.results__empty,
 .watchlist {
     flex-direction: column;
 }
 
-.hero {
+.hero,
+.results__empty {
     gap: 1em;
 }
 
@@ -209,6 +212,12 @@ body {
     margin-top: 2em;
 }
 
+.results__empty,
+.watchlist__empty {
+    padding: 2em;
+    text-align: center;
+}
+
 .fa-film,
 .result__nosearch,
 .result__heading,
@@ -218,7 +227,6 @@ body {
 
 .fa-film {
     font-size: 4rem;
-    margin-bottom: 1rem;;
 }
 
 .result__heading,
@@ -242,6 +250,16 @@ body {
 
 .fa-star {
     color: var(--clr-rating-star);
+}
+
+.watchlist__empty {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.watchlist__empty--text {
+    color: var(--clr-result-msg);
+    margin-bottom: 1em;
 }
 
 /* Utility classes */
