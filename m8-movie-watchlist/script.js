@@ -12,7 +12,6 @@ let watchlist = [];
 if (localStorage.getItem("watchlist")) {
     watchlist = JSON.parse(localStorage.getItem("watchlist"));
 }
-console.log(watchlist);
 
 if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
@@ -116,19 +115,18 @@ const updateWatchList = (arr, targetId) => {
     for (const movie of arr) {
         if (movie.imdbID === targetId) {
             targetMovieObj = movie;
-            console.log("Target Movie Object:", targetMovieObj);
         }
     }
 
-    if (watchlist.includes(targetMovieObj)) {
-        const targetMovieObjIndex = watchlist.indexOf(targetMovieObj);
-        watchlist.splice(targetMovieObjIndex, 1);
-        localStorage.setItem("watchlist", JSON.stringify(watchlist));
-        console.log("Updated Watchlist:", watchlist);
-    } else {
+    const targetObjInWatchlist = watchlist.find(item => item.imdbID === targetId);
+
+    if(!targetObjInWatchlist) {
         watchlist.push(targetMovieObj);
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
-        console.log("Updated Watchlist:", watchlist);
+    } else {
+        const targetMovieObjIndex = watchlist.indexOf(targetObjInWatchlist);
+        watchlist.splice(targetMovieObjIndex, 1);
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
     }
 };
 
