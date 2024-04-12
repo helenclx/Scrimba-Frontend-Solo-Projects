@@ -147,10 +147,8 @@ body,
 body {
     font-family: var(--ff-default), Arial, Helvetica, sans-serif;
     color: var(--clr-text);
-}
-
-main {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 button:hover {
@@ -355,6 +353,7 @@ button:hover {
     background-color: var(--clr-text);
     color: var(--clr-white);
     padding: 1em;
+    margin-top: auto;
 }
 
 /* Utility classes */
